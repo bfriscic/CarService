@@ -8,14 +8,14 @@ package hr.friscic.zavrsnirad.model;
 import javax.persistence.Entity;
 
 /**
- *Klasa Radnik se odnosi na zaposlenika/cu koji/ja je zaposlena u servisu
+ * Klasa Radnik se odnosi na zaposlenika/cu koji/ja je zaposlena u servisu
  * motornih vozila i izvršava servis na određenom vozilu.
+ *
  * @author K1R4
  */
-
 @Entity
-public class Radnik extends Entitet{
-    
+public class Radnik extends Entitet {
+
     private String ime;
     private String prezime;
     private String oib;
@@ -70,9 +70,5 @@ public class Radnik extends Entitet{
     public void setBrojugovora(String brojugovora) {
         this.brojugovora = brojugovora;
     }
-    
-    
-    
-    
-    
+
 }

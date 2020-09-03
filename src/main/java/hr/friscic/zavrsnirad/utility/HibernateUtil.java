@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hr.edunova.jp22.utility;
+package hr.friscic.zavrsnirad.utility;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

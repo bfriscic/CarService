@@ -8,13 +8,13 @@ package hr.friscic.zavrsnirad.model;
 import javax.persistence.Entity;
 
 /**
- *Klasa Marka se odnosi na marku vozila poput Audi,Volvo,Man,Ducati itd.
+ * Klasa Marka se odnosi na marku vozila poput Audi,Volvo,Man,Ducati itd.
+ *
  * @author K1R4
  */
-
 @Entity
 public class Marka extends Entitet {
-    
+
     private String naziv;
     private String model;
 
@@ -33,7 +33,5 @@ public class Marka extends Entitet {
     public void setModel(String model) {
         this.model = model;
     }
-    
-    
-    
+
 }

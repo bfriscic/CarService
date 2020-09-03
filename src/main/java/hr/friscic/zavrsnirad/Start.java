@@ -5,16 +5,18 @@
  */
 package hr.friscic.zavrsnirad;
 
-import hr.edunova.jp22.utility.HibernateUtil;
+import hr.friscic.zavrsnirad.utility.HibernateUtil;
+import hr.friscic.zavrsnirad.utility.PocetniInsert;
 
 /**
  *
  * @author K1R4
  */
 public class Start {
-    
+
     public static void main(String[] args) {
-        HibernateUtil.getSessionFactory().openSession();
+        //HibernateUtil.getSessionFactory().openSession();
+        PocetniInsert.izvedi();
     }
-    
+
 }

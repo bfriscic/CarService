@@ -10,23 +10,23 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 /**
- *Klasa Vozilo se odnosi na vozilo koje je potrebno servisirati.
+ * Klasa Vozilo se odnosi na vozilo koje je potrebno servisirati.
+ *
  * @author K1R4
  */
-
 @Entity
 public class Vozilo extends Entitet {
-    
+
     private Date godinaproizvodnje;
     private String boja;
     private String brojsasije;
-    
+
     @ManyToOne
     private Klijent klijent;
-    
+
     @ManyToOne
     private Marka marka;
-    
+
     @ManyToOne
     private Vrsta vrsta;
 
@@ -45,8 +45,6 @@ public class Vozilo extends Entitet {
     public void setVrsta(Vrsta vrsta) {
         this.vrsta = vrsta;
     }
-    
-    
 
     public Date getGodinaproizvodnje() {
         return godinaproizvodnje;
@@ -79,7 +77,5 @@ public class Vozilo extends Entitet {
     public void setKlijent(Klijent klijent) {
         this.klijent = klijent;
     }
-    
-    
-    
+
 }

@@ -10,23 +10,22 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 /**
- *Klasa Servis se odnosi na vrstu usluge odnosno koja vrsta
- * servisa se odrađuje na vozilu.
+ * Klasa Servis se odnosi na vrstu usluge odnosno koja vrsta servisa se odrađuje
+ * na vozilu.
+ *
  * @author K1R4
  */
-
 @Entity
 public class Servis extends Entitet {
-    
+
     private String naziv;
     private String opis;
     private BigDecimal cijena;
-    
+
     @ManyToOne
     private Vozilo vozilo;
-    
+
     @ManyToOne
     private Radnik radnik;
-    
 
 }
