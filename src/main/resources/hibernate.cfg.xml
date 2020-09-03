@@ -45,6 +45,8 @@
         
         <!-- Ovdje navodimo naše mapirane klase -->
          <mapping class="hr.friscic.zavrsnirad.model.Klijent" />
+         <mapping class="hr.friscic.zavrsnirad.model.Marka" />
+         <mapping class="hr.friscic.zavrsnirad.model.Vrsta" />
          
         
         
