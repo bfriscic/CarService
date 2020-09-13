@@ -28,4 +28,46 @@ public class Servis extends Entitet {
     @ManyToOne
     private Radnik radnik;
 
+    public String getNaziv() {
+        return naziv;
+    }
+
+    public void setNaziv(String naziv) {
+        this.naziv = naziv;
+    }
+
+    public String getOpis() {
+        return opis;
+    }
+
+    public void setOpis(String opis) {
+        this.opis = opis;
+    }
+
+    public BigDecimal getCijena() {
+        return cijena;
+    }
+
+    public void setCijena(BigDecimal cijena) {
+        this.cijena = cijena;
+    }
+
+    public Vozilo getVozilo() {
+        return vozilo;
+    }
+
+    public void setVozilo(Vozilo vozilo) {
+        this.vozilo = vozilo;
+    }
+
+    public Radnik getRadnik() {
+        return radnik;
+    }
+
+    public void setRadnik(Radnik radnik) {
+        this.radnik = radnik;
+    }
+    
+    
+
 }
