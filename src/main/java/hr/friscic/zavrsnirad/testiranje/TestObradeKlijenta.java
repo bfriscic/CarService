@@ -20,8 +20,8 @@ public class TestObradeKlijenta {
         Klijent k = new Klijent();
         
         ObradaKlijent obradaKlijent = new ObradaKlijent(k);
-        k.setIme("Pero");
-        k.setPrezime("");
+        k.setIme("aaa");
+        k.setPrezime("222");
         k.setOib("4999");
         k.setEmail("test@test.com");
         k.setKontaktbroj("0951234567");

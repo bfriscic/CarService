@@ -33,8 +33,8 @@ public class ObradaVrsta extends Obrada<Vrsta> {
         if (entitet.getNaziv() == null || entitet.getNaziv().isEmpty()) {
             throw new Iznimka("Naziv vrste vozila je potrebno unijeti! Npr. automobil, motocikl ili tegljač.");
         }
-        if (!entitet.getNaziv().matches(("[a-zA-Z]+"))) {
-            throw new Iznimka("Naziv vrste vozila ne može sadržavati brojeve!");
+        if (!entitet.getNaziv().matches(("^[a-zA-ZÆÐƎƏƐƔĲŊŒẞÞǷȜæðǝəɛɣĳŋœĸſßþƿȝĄƁÇĐƊĘĦĮƘŁØƠŞȘŢȚŦŲƯY̨Ƴąɓçđɗęħįƙłøơşșţțŧųưy̨ƴÁÀÂÄǍĂĀÃÅǺĄÆǼǢƁĆĊĈČÇĎḌĐƊÐÉÈĖÊËĚĔĒĘẸƎƏƐĠĜǦĞĢƔáàâäǎăāãåǻąæǽǣɓćċĉčçďḍđɗðéèėêëěĕēęẹǝəɛġĝǧğģɣĤḤĦIÍÌİÎÏǏĬĪĨĮỊĲĴĶƘĹĻŁĽĿʼNŃN̈ŇÑŅŊÓÒÔÖǑŎŌÕŐỌØǾƠŒĥḥħıíìiîïǐĭīĩįịĳĵķƙĸĺļłľŀŉńn̈ňñņŋóòôöǒŏōõőọøǿơœŔŘŖŚŜŠŞȘṢẞŤŢṬŦÞÚÙÛÜǓŬŪŨŰŮŲỤƯẂẀŴẄǷÝỲŶŸȲỸƳŹŻŽẒŕřŗſśŝšşșṣßťţṭŧþúùûüǔŭūũűůųụưẃẁŵẅƿýỳŷÿȳỹƴźżžẓ\\s-,.\\']+$"))) {
+            throw new Iznimka("Naziv vrste vozila nije ispravan! Dozvoljen je unos samo slova.");
         }
 
     }
