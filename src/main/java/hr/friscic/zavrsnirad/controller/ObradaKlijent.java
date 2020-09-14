@@ -43,8 +43,8 @@ public class ObradaKlijent extends Obrada<Klijent> {
          if(entitet.getIme().isEmpty() || entitet.getIme()==null){
             throw new Iznimka("Ime je obavezno, ne može biti prazno!");
         }
-        if(!entitet.getIme().matches(".*[a-zA-Z]+.*")){
-            throw new Iznimka("Ime mora sadržavati barem jedno slovo!");
+        if (!entitet.getIme().matches(("[a-zA-Z]+"))) {
+            throw new Iznimka("Ime ne može sadržavati brojeve!");
         }
     }
 
@@ -52,8 +52,8 @@ public class ObradaKlijent extends Obrada<Klijent> {
         if(entitet.getPrezime().isEmpty() || entitet.getPrezime()==null){
             throw new Iznimka("Prezime je obavezno, ne može biti prazno!");
         }
-        if(!entitet.getPrezime().matches(".*[a-zA-Z]+.*")){
-            throw new Iznimka("Prezime mora sadržavati barem jedno slovo!");
+        if (!entitet.getIme().matches(("[a-zA-Z]+"))) {
+            throw new Iznimka("Prezime ne može sadržavati brojeve!");
         }
         
     }
