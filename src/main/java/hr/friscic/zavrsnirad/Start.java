@@ -15,7 +15,7 @@ import hr.friscic.zavrsnirad.utility.PocetniInsert;
 public class Start {
 
     public static void main(String[] args) {
-        HibernateUtil.getSessionFactory().openSession();
+        //HibernateUtil.getSessionFactory().openSession();
 
         //PocetniInsert.izvedi();
     }

@@ -6,33 +6,37 @@
 package hr.friscic.zavrsnirad.testiranje;
 
 import hr.friscic.zavrsnirad.controller.ObradaKlijent;
+import hr.friscic.zavrsnirad.controller.ObradaOsoba;
 import hr.friscic.zavrsnirad.model.Klijent;
+import hr.friscic.zavrsnirad.model.Osoba;
 import hr.friscic.zavrsnirad.utility.Iznimka;
+import java.util.List;
 
 /**
  *
  * @author K1R4
  */
 public class TestObradeKlijenta {
-    
+
     public static void main(String[] args) {
-        
+
         Klijent k = new Klijent();
-        
-        ObradaKlijent obradaKlijent = new ObradaKlijent(k);
-        k.setIme("aaa");
-        k.setPrezime("222");
+
+        k.setIme("Perica333");
+        k.setPrezime("Perić1");
         k.setOib("4999");
         k.setEmail("test@test.com");
         k.setKontaktbroj("0951234567");
-        
-        
-        
+
+        ObradaKlijent obradaK = new ObradaKlijent();
+
+        obradaK.setEntitet(k);
+
         try {
-            obradaKlijent.create();
+            obradaK.create();
         } catch (Iznimka e) {
             System.out.println(e.getPoruka());
         }
     }
-    
+
 }

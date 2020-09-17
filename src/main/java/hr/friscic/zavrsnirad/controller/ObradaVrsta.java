@@ -7,12 +7,18 @@ package hr.friscic.zavrsnirad.controller;
 
 import hr.friscic.zavrsnirad.model.Vrsta;
 import hr.friscic.zavrsnirad.utility.Iznimka;
+import java.util.List;
 
 /**
  *
  * @author K1R4
  */
 public class ObradaVrsta extends Obrada<Vrsta> {
+
+    @Override
+    public List<Vrsta> getPodaci() {
+        return sesion.createQuery("from Vrsta").list();
+    }
 
     @Override
     protected void kontrolaCreate() throws Iznimka {

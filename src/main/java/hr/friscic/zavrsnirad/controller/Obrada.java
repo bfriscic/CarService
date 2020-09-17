@@ -7,6 +7,7 @@ package hr.friscic.zavrsnirad.controller;
 
 import hr.friscic.zavrsnirad.utility.HibernateUtil;
 import hr.friscic.zavrsnirad.utility.Iznimka;
+import java.util.List;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 
@@ -18,6 +19,8 @@ public abstract class Obrada<T> {
 
     protected T entitet;
     protected Session sesion;
+
+    public abstract List<T> getPodaci();
 
     protected abstract void kontrolaCreate() throws Iznimka;
 
@@ -59,6 +62,14 @@ public abstract class Obrada<T> {
         sesion.beginTransaction();
         sesion.save(entitet);
         sesion.getTransaction().commit();
+    }
+
+    public T getEntitet() {
+        return entitet;
+    }
+
+    public void setEntitet(T entitet) {
+        this.entitet = entitet;
     }
 
 }
