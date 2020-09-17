@@ -6,47 +6,16 @@
 package hr.friscic.zavrsnirad.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 
 /**
- *Klasa Klijent se odnosi na klijente koji koriste usluge servisa.
+ * Klasa Klijent se odnosi na klijente koji koriste usluge servisa.
+ *
  * @author K1R4
  */
-
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Klijent extends Entitet {
-    
-    private String ime;
-    private String prezime;
-    private String oib;
+public class Klijent extends Osoba {
+
     private String kontaktbroj;
-    private String email;
-
-    public String getIme() {
-        return ime;
-    }
-
-    public void setIme(String ime) {
-        this.ime = ime;
-    }
-
-    public String getPrezime() {
-        return prezime;
-    }
-
-    public void setPrezime(String prezime) {
-        this.prezime = prezime;
-    }
-
-    public String getOib() {
-        return oib;
-    }
-
-    public void setOib(String oib) {
-        this.oib = oib;
-    }
 
     public String getKontaktbroj() {
         return kontaktbroj;
@@ -56,14 +25,4 @@ public class Klijent extends Entitet {
         this.kontaktbroj = kontaktbroj;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    
-    
-    
 }

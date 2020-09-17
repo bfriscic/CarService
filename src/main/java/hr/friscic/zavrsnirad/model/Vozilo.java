@@ -54,8 +54,6 @@ public class Vozilo extends Entitet {
         this.godinaproizvodnje = godinaproizvodnje;
     }
 
-    
-
     public String getBoja() {
         return boja;
     }

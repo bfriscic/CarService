@@ -34,7 +34,7 @@ Potrebno je ručno kreirati bazu
         create-drop: drop the schema at the end of the session. 
         1. puta create-drop, poslije update
         -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create-drop</property>
         <!-- dbcp connection pool configuration -->
         <property name="hibernate.dbcp.initialSize">5</property>
         <property name="hibernate.dbcp.maxTotal">20</property>

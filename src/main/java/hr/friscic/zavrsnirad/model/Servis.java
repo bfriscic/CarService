@@ -67,7 +67,5 @@ public class Servis extends Entitet {
     public void setRadnik(Radnik radnik) {
         this.radnik = radnik;
     }
-    
-    
 
 }
