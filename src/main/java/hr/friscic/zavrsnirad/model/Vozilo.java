@@ -6,6 +6,7 @@
 package hr.friscic.zavrsnirad.model;
 
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -18,7 +19,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Vozilo extends Entitet {
 
-    private Date godinaproizvodnje;
+    private LocalDateTime godinaproizvodnje;
     private String boja;
     private String brojsasije;
 
@@ -47,11 +48,11 @@ public class Vozilo extends Entitet {
         this.vrsta = vrsta;
     }
 
-    public Date getGodinaproizvodnje() {
+    public LocalDateTime getGodinaproizvodnje() {
         return godinaproizvodnje;
     }
 
-    public void setGodinaproizvodnje(Date godinaproizvodnje) {
+    public void setGodinaproizvodnje(LocalDateTime godinaproizvodnje) {
         this.godinaproizvodnje = godinaproizvodnje;
     }
 

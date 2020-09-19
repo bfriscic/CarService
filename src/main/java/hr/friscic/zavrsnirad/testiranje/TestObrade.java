@@ -16,6 +16,7 @@ import hr.friscic.zavrsnirad.model.Osoba;
 import hr.friscic.zavrsnirad.model.Vozilo;
 import hr.friscic.zavrsnirad.model.Vrsta;
 import hr.friscic.zavrsnirad.utility.Iznimka;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Calendar;
@@ -29,47 +30,64 @@ public class TestObrade {
 
     public static void main(String[] args) {
 
-        Klijent k = new Klijent();
+//        Klijent k = new Klijent();
+//
+//        k.setIme("Perica333");
+//        k.setPrezime("Perić1");
+//        k.setOib("4999");
+//        k.setEmail("test@test.com");
+//        k.setKontaktbroj("0951234567");
+//
+//        ObradaKlijent obradaK = new ObradaKlijent();
+//
+//        obradaK.setEntitet(k);
+//
+//        try {
+//            obradaK.create();
+//        } catch (Iznimka e) {
+//            System.out.println(e.getPoruka());
+//        }
+//        Marka m = new Marka();
+//        
+//        m.setModel("Ford");
+//        m.setNaziv("Focus");
+//        
+//        ObradaMarka obradaM = new ObradaMarka();
+//        
+//        obradaM.setEntitet(m);
+//        
+//        try {
+//            obradaM.create();
+//        } catch (Iznimka e) {
+//            System.out.println(e.getPoruka());
+//        }
+//        Vrsta v = new Vrsta();
+//        
+//        v.setNaziv("automobil");
+//        
+//        ObradaVrsta obradaV = new ObradaVrsta();
+//        
+//        obradaV.setEntitet(v);
+//        
+//        try {
+//            obradaV.create();
+//        } catch (Iznimka e) {
+//            System.out.println(e.getPoruka());
+//        }
+        Vozilo w = new Vozilo();
+        
 
-        k.setIme("Perica333");
-        k.setPrezime("Perić1");
-        k.setOib("4999");
-        k.setEmail("test@test.com");
-        k.setKontaktbroj("0951234567");
+        w.setBoja("bijela");
+        w.setBrojsasije("1FT7W2BT9CEA54193");
+        w.setGodinaproizvodnje(LocalDateTime.now());
+        
 
-        ObradaKlijent obradaK = new ObradaKlijent();
+        ObradaVozilo obradaW = new ObradaVozilo();
 
-        obradaK.setEntitet(k);
+        obradaW.setEntitet(w);
 
         try {
-            obradaK.create();
-        } catch (Iznimka e) {
-            System.out.println(e.getPoruka());
-        }
-        Marka m = new Marka();
-
-        m.setModel("Ford");
-        m.setNaziv("Focus");
-
-        ObradaMarka obradaM = new ObradaMarka();
-
-        obradaM.setEntitet(m);
-
-        try {
-            obradaM.create();
-        } catch (Iznimka e) {
-            System.out.println(e.getPoruka());
-        }
-        Vrsta v = new Vrsta();
-
-        v.setNaziv("automobil");
-
-        ObradaVrsta obradaV = new ObradaVrsta();
-
-        obradaV.setEntitet(v);
-
-        try {
-            obradaV.create();
+            obradaW.create();
         } catch (Iznimka e) {
             System.out.println(e.getPoruka());
         }
