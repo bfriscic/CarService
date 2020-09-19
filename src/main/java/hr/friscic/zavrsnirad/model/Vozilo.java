@@ -5,7 +5,8 @@
  */
 package hr.friscic.zavrsnirad.model;
 
-import java.text.SimpleDateFormat;
+
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -17,7 +18,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Vozilo extends Entitet {
 
-    private SimpleDateFormat godinaproizvodnje;
+    private Date godinaproizvodnje;
     private String boja;
     private String brojsasije;
 
@@ -46,11 +47,11 @@ public class Vozilo extends Entitet {
         this.vrsta = vrsta;
     }
 
-    public SimpleDateFormat getGodinaproizvodnje() {
+    public Date getGodinaproizvodnje() {
         return godinaproizvodnje;
     }
 
-    public void setGodinaproizvodnje(SimpleDateFormat godinaproizvodnje) {
+    public void setGodinaproizvodnje(Date godinaproizvodnje) {
         this.godinaproizvodnje = godinaproizvodnje;
     }
 

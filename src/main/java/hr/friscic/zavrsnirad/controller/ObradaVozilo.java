@@ -54,8 +54,8 @@ public class ObradaVozilo extends Obrada<Vozilo> {
     }
 
     private void kontrolaGodinaProizvodnje() throws Iznimka {
-        if (entitet.getGodinaproizvodnje() == null) {
-            throw new Iznimka("Potrebno je unijeti datum! Format unosa je dd/mm/yyyy");
+        if (entitet.getGodinaproizvodnje()== null) {
+            throw new Iznimka("Potrebno je unijeti datum! Format unosa je dd.mm.yyyy");
         }
     }
 

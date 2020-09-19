@@ -6,17 +6,26 @@
 package hr.friscic.zavrsnirad.testiranje;
 
 import hr.friscic.zavrsnirad.controller.ObradaKlijent;
+import hr.friscic.zavrsnirad.controller.ObradaMarka;
 import hr.friscic.zavrsnirad.controller.ObradaOsoba;
+import hr.friscic.zavrsnirad.controller.ObradaVozilo;
+import hr.friscic.zavrsnirad.controller.ObradaVrsta;
 import hr.friscic.zavrsnirad.model.Klijent;
+import hr.friscic.zavrsnirad.model.Marka;
 import hr.friscic.zavrsnirad.model.Osoba;
+import hr.friscic.zavrsnirad.model.Vozilo;
+import hr.friscic.zavrsnirad.model.Vrsta;
 import hr.friscic.zavrsnirad.utility.Iznimka;
+import java.util.Date;
 import java.util.List;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  *
  * @author K1R4
  */
-public class TestObradeKlijenta {
+public class TestObrade {
 
     public static void main(String[] args) {
 
@@ -37,6 +46,34 @@ public class TestObradeKlijenta {
         } catch (Iznimka e) {
             System.out.println(e.getPoruka());
         }
+        Marka m = new Marka();
+
+        m.setModel("Ford");
+        m.setNaziv("Focus");
+
+        ObradaMarka obradaM = new ObradaMarka();
+
+        obradaM.setEntitet(m);
+
+        try {
+            obradaM.create();
+        } catch (Iznimka e) {
+            System.out.println(e.getPoruka());
+        }
+        Vrsta v = new Vrsta();
+
+        v.setNaziv("automobil");
+
+        ObradaVrsta obradaV = new ObradaVrsta();
+
+        obradaV.setEntitet(v);
+
+        try {
+            obradaV.create();
+        } catch (Iznimka e) {
+            System.out.println(e.getPoruka());
+        }
+
     }
 
 }

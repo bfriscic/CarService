@@ -43,6 +43,18 @@ public abstract class Obrada<T> {
         return entitet;
     }
 
+    public T createAll(List<T> lista) throws Iznimka {
+        sesion.beginTransaction();
+        for (T t : lista) {
+            setEntitet(t);
+            kontrolaCreate();
+            sesion.save(t);
+        }
+        sesion.getTransaction().commit();
+
+        return entitet;
+    }
+
     public T update() throws Iznimka {
         kontrolaUpdate();
         save();
