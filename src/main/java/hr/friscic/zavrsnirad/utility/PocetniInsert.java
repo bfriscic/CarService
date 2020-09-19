@@ -24,10 +24,6 @@ public class PocetniInsert {
 
         Faker faker = new Faker();
 
-        String[] oibi = {"44879378548", "38714462960", "48653367511",
-            "07463739447", "55376858772", "57121746664", "45088797644", "97067197029",
-            "36388448333", "13633152331"};
-
         String[] kontaktBrojevi = {"0957894356", "0995698147", "0925698753", "0979684523",
             "0915869456", "0916003551", "0993658796", "0954562389",
             "0927568453", "0953487635"};
@@ -37,7 +33,7 @@ public class PocetniInsert {
             k = new Klijent();
             k.setIme((faker.name().firstName()));
             k.setPrezime(faker.name().lastName());
-            k.setOib(oibi[i]);
+            k.setOib(Oib.getOibIiCentrala());
             k.setEmail(k.getIme().toLowerCase() + "." + k.getPrezime().toLowerCase() + "@gmail.com");
             k.setKontaktbroj(kontaktBrojevi[i]);
             session.save(k);
