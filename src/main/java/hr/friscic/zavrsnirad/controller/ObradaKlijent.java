@@ -37,7 +37,7 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
 
     }
 
-    private void kontrolaKontaktBroj() throws Iznimka {
+    protected void kontrolaKontaktBroj() throws Iznimka {
         if (entitet.getKontaktbroj().isEmpty()) {
             throw new Iznimka("Kontakt broj ne smije biti prazan!");
         }

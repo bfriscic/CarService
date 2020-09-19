@@ -36,13 +36,13 @@ public class ObradaMarka extends Obrada<Marka> {
 
     }
 
-    private void kontrolaModel() throws Iznimka {
+    protected void kontrolaModel() throws Iznimka {
         if (entitet.getModel() == null || entitet.getModel().isEmpty()) {
             throw new Iznimka("Model je obavezan! Npr. Focus ili Golf.");
         }
     }
 
-    private void kontrolaNaziv() throws Iznimka {
+    protected void kontrolaNaziv() throws Iznimka {
         if (entitet.getNaziv() == null || entitet.getNaziv().isEmpty()) {
             throw new Iznimka("Naziv marke je potrebno unijeti! Npr. Ford ili Volkswagen.");
         }
