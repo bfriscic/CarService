@@ -34,7 +34,7 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
         
     }
     
-    private void kontrolaIme() throws Iznimka {
+    protected void kontrolaIme() throws Iznimka {
         if (entitet.getIme().isEmpty() || entitet.getIme() == null) {
             throw new Iznimka("Ime je obavezno, ne može biti prazno!");
         }
@@ -43,7 +43,7 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
         }
     }
 
-    private void kontrolaPrezime() throws Iznimka {
+    protected void kontrolaPrezime() throws Iznimka {
         if (entitet.getPrezime().isEmpty() || entitet.getPrezime() == null) {
             throw new Iznimka("Prezime je obavezno, ne može biti prazno!");
         }
@@ -53,7 +53,7 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
 
     }
 
-    private void kontrolaOib() throws Iznimka {
+    protected void kontrolaOib() throws Iznimka {
         if (entitet.getOib() == null) {
 
         } else if (!Oib.provjeraOib(entitet.getOib())) {
@@ -61,7 +61,7 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
         }
     }
 
-    private void kontrolaEmail() throws Iznimka {
+    protected void kontrolaEmail() throws Iznimka {
 
         if (entitet.getEmail().isEmpty()) {
             throw new Iznimka("Email ne smije biti prazan!");

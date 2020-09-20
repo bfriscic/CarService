@@ -8,6 +8,7 @@ package hr.friscic.zavrsnirad.utility;
 import com.github.javafaker.Faker;
 import hr.friscic.zavrsnirad.utility.HibernateUtil;
 import hr.friscic.zavrsnirad.model.Klijent;
+import hr.friscic.zavrsnirad.model.Operater;
 import org.hibernate.Session;
 
 /**
@@ -19,6 +20,15 @@ public class PocetniInsert {
     public static void izvedi() {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        Operater operater = new Operater();
+        operater.setIme("Bernard");
+        operater.setPrezime("Friščić");
+        operater.setUloga("oper");
+        operater.setEmail("bernard.friscic@gmail.com");
+        operater.setLozinka("");
+        
+        
 
         session.beginTransaction();
 
