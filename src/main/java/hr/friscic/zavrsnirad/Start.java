@@ -7,6 +7,7 @@ package hr.friscic.zavrsnirad;
 
 import hr.friscic.zavrsnirad.utility.HibernateUtil;
 import hr.friscic.zavrsnirad.utility.PocetniInsert;
+import hr.friscic.zavrsnirad.view.Izbornik;
 
 /**
  *
@@ -15,6 +16,9 @@ import hr.friscic.zavrsnirad.utility.PocetniInsert;
 public class Start {
 
     public static void main(String[] args) {
+        
+        new Izbornik().setVisible(true);
+        
         //HibernateUtil.getSessionFactory().openSession();
 
         //PocetniInsert.izvedi();
