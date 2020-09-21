@@ -12,7 +12,7 @@ import javax.persistence.MappedSuperclass;
  * @author K1R4
  */
 @MappedSuperclass
-public class Osoba extends Entitet {
+public abstract class Osoba extends Entitet {
 
     private String ime;
     private String prezime;

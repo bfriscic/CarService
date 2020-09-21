@@ -6,10 +6,14 @@
 package hr.friscic.zavrsnirad.utility;
 
 import com.github.javafaker.Faker;
+import hr.friscic.zavrsnirad.controller.ObradaOperater;
 import hr.friscic.zavrsnirad.utility.HibernateUtil;
 import hr.friscic.zavrsnirad.model.Klijent;
 import hr.friscic.zavrsnirad.model.Operater;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.hibernate.Session;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
@@ -26,7 +30,17 @@ public class PocetniInsert {
         operater.setPrezime("Friščić");
         operater.setUloga("oper");
         operater.setEmail("bernard.friscic@gmail.com");
-        operater.setLozinka("");
+        operater.setLozinka(BCrypt.hashpw("b", BCrypt.gensalt()));
+        
+        ObradaOperater oo = new ObradaOperater();
+        
+        oo.setEntitet(operater);
+        
+        try {
+            oo.create();
+        } catch (Iznimka ex) {
+            ex.printStackTrace();
+        }
         
         
 

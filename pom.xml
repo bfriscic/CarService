@@ -39,7 +39,7 @@
             <version>0.3.1</version>
         </dependency>
         
-          <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
@@ -50,5 +50,13 @@
             <artifactId>AbsoluteLayout</artifactId>
             <version>RELEASE120</version>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.3m</version>
+        </dependency>
+
     </dependencies>
 </project>
