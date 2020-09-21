@@ -51,4 +51,8 @@ public abstract class Osoba extends Entitet {
         this.oib = oib;
     }
 
+    public String getImePrezime() {
+        return getIme() + " " + getPrezime();
+    }
+
 }
