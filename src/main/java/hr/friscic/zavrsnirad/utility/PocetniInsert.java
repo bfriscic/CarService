@@ -20,14 +20,15 @@ import org.mindrot.jbcrypt.BCrypt;
  * @author K1R4
  */
 public class PocetniInsert {
-
+    
     public static void izvedi() {
-
+        
         Session session = HibernateUtil.getSessionFactory().openSession();
         
         Operater operater = new Operater();
         operater.setIme("Bernard");
         operater.setPrezime("Friščić");
+        operater.setOib(Oib.getOibIiCentrala());
         operater.setUloga("oper");
         operater.setEmail("bernard.friscic@gmail.com");
         operater.setLozinka(BCrypt.hashpw("b", BCrypt.gensalt()));
@@ -42,16 +43,14 @@ public class PocetniInsert {
             ex.printStackTrace();
         }
         
-        
-
         session.beginTransaction();
-
+        
         Faker faker = new Faker();
-
+        
         String[] kontaktBrojevi = {"0957894356", "0995698147", "0925698753", "0979684523",
             "0915869456", "0916003551", "0993658796", "0954562389",
             "0927568453", "0953487635"};
-
+        
         Klijent k;
         for (int i = 0; i < 10; i++) {
             k = new Klijent();
@@ -64,5 +63,27 @@ public class PocetniInsert {
         }
         session.getTransaction().commit();
     }
-
+    
+    public static void adminOperater() {
+        
+        Operater operater = new Operater();
+        operater.setIme("SMV");
+        operater.setPrezime("Operater");
+        operater.setUloga("admin");
+        operater.setOib(Oib.getOibIiCentrala());
+        operater.setEmail("smv@smv.com");
+        operater.setLozinka(BCrypt.hashpw("s", BCrypt.gensalt()));
+        
+        ObradaOperater oo = new ObradaOperater();
+        
+        oo.setEntitet(operater);
+        
+        try {
+            oo.create();
+        } catch (Iznimka ex) {
+            ex.printStackTrace();
+        }
+        
+    }
+    
 }

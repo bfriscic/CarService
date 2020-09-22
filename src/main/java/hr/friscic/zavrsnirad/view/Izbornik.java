@@ -16,7 +16,7 @@ public class Izbornik extends javax.swing.JFrame {
      */
     public Izbornik() {
         initComponents();
-        setTitle("Servis motornih vozila"); 
+        setTitle("SMV APP"); 
         
     }
 
