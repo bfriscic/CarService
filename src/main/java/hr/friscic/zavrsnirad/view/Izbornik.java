@@ -16,8 +16,11 @@ public class Izbornik extends javax.swing.JFrame {
      */
     public Izbornik() {
         initComponents();
-        setTitle("SMV APP"); 
-        
+        jmNaslovGrana.setText((Aplikacija.NASLOV_APP));
+        setTitle("SMV APP");
+
+        jmiOperateri.setVisible(Aplikacija.isAdmin());
+
     }
 
     /**
@@ -29,25 +32,92 @@ public class Izbornik extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jmNaslovGrana = new javax.swing.JMenu();
+        jmiKlijenti = new javax.swing.JMenuItem();
+        jmiVozila = new javax.swing.JMenuItem();
+        jmiServisi = new javax.swing.JMenuItem();
+        jmiRadnici = new javax.swing.JMenuItem();
+        jmiMarke = new javax.swing.JMenuItem();
+        jmiOperateri = new javax.swing.JMenuItem();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
+        jmiIzlaz = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 600));
+
+        jmNaslovGrana.setText("NASLOV");
+
+        jmiKlijenti.setText("Klijenti");
+        jmNaslovGrana.add(jmiKlijenti);
+
+        jmiVozila.setText("Vozila");
+        jmNaslovGrana.add(jmiVozila);
+
+        jmiServisi.setText("Servisi");
+        jmNaslovGrana.add(jmiServisi);
+
+        jmiRadnici.setText("Radnici");
+        jmNaslovGrana.add(jmiRadnici);
+
+        jmiMarke.setText("Marke");
+        jmNaslovGrana.add(jmiMarke);
+
+        jmiOperateri.setText("Operateri");
+        jmiOperateri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiOperateriActionPerformed(evt);
+            }
+        });
+        jmNaslovGrana.add(jmiOperateri);
+        jmNaslovGrana.add(jSeparator4);
+
+        jmiIzlaz.setText("Izlaz");
+        jmiIzlaz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiIzlazActionPerformed(evt);
+            }
+        });
+        jmNaslovGrana.add(jmiIzlaz);
+
+        jMenuBar1.add(jmNaslovGrana);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 578, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
+    private void jmiIzlazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiIzlazActionPerformed
+        dispose();
+    }//GEN-LAST:event_jmiIzlazActionPerformed
+
+    private void jmiOperateriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiOperateriActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiOperateriActionPerformed
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JMenu jmNaslovGrana;
+    private javax.swing.JMenuItem jmiIzlaz;
+    private javax.swing.JMenuItem jmiKlijenti;
+    private javax.swing.JMenuItem jmiMarke;
+    private javax.swing.JMenuItem jmiOperateri;
+    private javax.swing.JMenuItem jmiRadnici;
+    private javax.swing.JMenuItem jmiServisi;
+    private javax.swing.JMenuItem jmiVozila;
     // End of variables declaration//GEN-END:variables
 }

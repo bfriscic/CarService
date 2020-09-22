@@ -13,6 +13,16 @@ import hr.friscic.zavrsnirad.model.Operater;
  */
 public class Aplikacija {
     
+    public static final String NASLOV_APP="Izbornik";
+    
     public static Operater operater;
+    
+    public static boolean isAdmin() {
+        if(operater==null || operater.getUloga()==null){
+            return false;
+        }
+        return operater.getUloga().equals("admin");
+            
+    }
     
 }
