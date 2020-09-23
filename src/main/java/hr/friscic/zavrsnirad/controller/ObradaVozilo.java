@@ -25,6 +25,7 @@ public class ObradaVozilo extends Obrada<Vozilo> {
         kontrolaBoja();
         kontrolaBrojSasije();
         kontrolaGodinaProizvodnje();
+        kontrolaVrstaVozila();
     }
 
     @Override
@@ -54,9 +55,19 @@ public class ObradaVozilo extends Obrada<Vozilo> {
     }
 
     private void kontrolaGodinaProizvodnje() throws Iznimka {
-        if (entitet.getGodinaproizvodnje()== null) {
+        if (entitet.getGodinaproizvodnje() == null) {
             throw new Iznimka("Potrebno je unijeti datum! Format unosa je dd.mm.yyyy");
         }
+    }
+
+    private void kontrolaVrstaVozila() throws Iznimka {
+        if (entitet.getVrstavozila() == null || entitet.getVrstavozila().isEmpty()) {
+            throw new Iznimka("Vrstu vozila je potrebno unijeti! Npr. automobil, motocikl ili tegljač.");
+        }
+        if (!entitet.getVrstavozila().matches(("^[a-zA-ZÆÐƎƏƐƔĲŊŒẞÞǷȜæðǝəɛɣĳŋœĸſßþƿȝĄƁÇĐƊĘĦĮƘŁØƠŞȘŢȚŦŲƯY̨Ƴąɓçđɗęħįƙłøơşșţțŧųưy̨ƴÁÀÂÄǍĂĀÃÅǺĄÆǼǢƁĆĊĈČÇĎḌĐƊÐÉÈĖÊËĚĔĒĘẸƎƏƐĠĜǦĞĢƔáàâäǎăāãåǻąæǽǣɓćċĉčçďḍđɗðéèėêëěĕēęẹǝəɛġĝǧğģɣĤḤĦIÍÌİÎÏǏĬĪĨĮỊĲĴĶƘĹĻŁĽĿʼNŃN̈ŇÑŅŊÓÒÔÖǑŎŌÕŐỌØǾƠŒĥḥħıíìiîïǐĭīĩįịĳĵķƙĸĺļłľŀŉńn̈ňñņŋóòôöǒŏōõőọøǿơœŔŘŖŚŜŠŞȘṢẞŤŢṬŦÞÚÙÛÜǓŬŪŨŰŮŲỤƯẂẀŴẄǷÝỲŶŸȲỸƳŹŻŽẒŕřŗſśŝšşșṣßťţṭŧþúùûüǔŭūũűůųụưẃẁŵẅƿýỳŷÿȳỹƴźżžẓ\\s-,.\\']+$"))) {
+            throw new Iznimka("Vrsta vozila nije ispravna! Dozvoljen je unos samo slova.");
+        }
+
     }
 
 }

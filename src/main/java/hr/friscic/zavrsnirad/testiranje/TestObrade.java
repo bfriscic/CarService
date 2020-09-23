@@ -9,12 +9,10 @@ import hr.friscic.zavrsnirad.controller.ObradaKlijent;
 import hr.friscic.zavrsnirad.controller.ObradaMarka;
 import hr.friscic.zavrsnirad.controller.ObradaOsoba;
 import hr.friscic.zavrsnirad.controller.ObradaVozilo;
-import hr.friscic.zavrsnirad.controller.ObradaVrsta;
 import hr.friscic.zavrsnirad.model.Klijent;
 import hr.friscic.zavrsnirad.model.Marka;
 import hr.friscic.zavrsnirad.model.Osoba;
 import hr.friscic.zavrsnirad.model.Vozilo;
-import hr.friscic.zavrsnirad.model.Vrsta;
 import hr.friscic.zavrsnirad.utility.Iznimka;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -75,12 +73,10 @@ public class TestObrade {
 //            System.out.println(e.getPoruka());
 //        }
         Vozilo w = new Vozilo();
-        
 
         w.setBoja("bijela");
         w.setBrojsasije("1FT7W2BT9CEA54193");
         w.setGodinaproizvodnje(LocalDateTime.now());
-        
 
         ObradaVozilo obradaW = new ObradaVozilo();
 

@@ -47,7 +47,6 @@ Potrebno je ručno kreirati bazu
         <mapping class="hr.friscic.zavrsnirad.model.Operater" />
         <mapping class="hr.friscic.zavrsnirad.model.Klijent" />
         <mapping class="hr.friscic.zavrsnirad.model.Marka" />
-        <mapping class="hr.friscic.zavrsnirad.model.Vrsta" />
         <mapping class="hr.friscic.zavrsnirad.model.Vozilo" />
         <mapping class="hr.friscic.zavrsnirad.model.Radnik" />
         <mapping class="hr.friscic.zavrsnirad.model.Servis" />

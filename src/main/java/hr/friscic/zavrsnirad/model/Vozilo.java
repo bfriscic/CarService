@@ -5,7 +5,6 @@
  */
 package hr.friscic.zavrsnirad.model;
 
-
 import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.Entity;
@@ -22,6 +21,7 @@ public class Vozilo extends Entitet {
     private LocalDateTime godinaproizvodnje;
     private String boja;
     private String brojsasije;
+    private String vrstavozila;
 
     @ManyToOne
     private Klijent klijent;
@@ -29,8 +29,13 @@ public class Vozilo extends Entitet {
     @ManyToOne
     private Marka marka;
 
-    @ManyToOne
-    private Vrsta vrsta;
+    public String getVrstavozila() {
+        return vrstavozila;
+    }
+
+    public void setVrstavozila(String vrstavozila) {
+        this.vrstavozila = vrstavozila;
+    }
 
     public Marka getMarka() {
         return marka;
@@ -38,14 +43,6 @@ public class Vozilo extends Entitet {
 
     public void setMarka(Marka marka) {
         this.marka = marka;
-    }
-
-    public Vrsta getVrsta() {
-        return vrsta;
-    }
-
-    public void setVrsta(Vrsta vrsta) {
-        this.vrsta = vrsta;
     }
 
     public LocalDateTime getGodinaproizvodnje() {
