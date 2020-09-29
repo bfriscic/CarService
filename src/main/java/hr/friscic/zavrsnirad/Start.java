@@ -5,10 +5,9 @@
  */
 package hr.friscic.zavrsnirad;
 
-import hr.friscic.zavrsnirad.utility.HibernateUtil;
-import hr.friscic.zavrsnirad.utility.PocetniInsert;
+import com.formdev.flatlaf.FlatDarkLaf;
 import hr.friscic.zavrsnirad.view.Autorizacija;
-import hr.friscic.zavrsnirad.view.Izbornik;
+import javax.swing.UIManager;
 
 /**
  *
@@ -17,13 +16,17 @@ import hr.friscic.zavrsnirad.view.Izbornik;
 public class Start {
 
     public static void main(String[] args) {
-        
-        new Autorizacija().setVisible(true);
-        
-        //HibernateUtil.getSessionFactory().openSession();
 
+        try {
+            UIManager.setLookAndFeel(new FlatDarkLaf());
+        } catch (Exception ex) {
+            System.err.println("Greška prilikom pokretanja LaF-a!");
+        }
+
+        new Autorizacija().setVisible(true);
+
+        //HibernateUtil.getSessionFactory().openSession();
         //PocetniInsert.izvedi();
-        
         //PocetniInsert.adminOperater();
     }
 

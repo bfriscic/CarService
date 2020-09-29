@@ -23,6 +23,7 @@ public class Autorizacija extends javax.swing.JFrame {
      */
     public Autorizacija() {
         initComponents();
+        
 
         txtEmail.requestFocus();
         txtEmail.setText("bernard.friscic@gmail.com");
@@ -42,31 +43,40 @@ public class Autorizacija extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         pswLozinka = new javax.swing.JPasswordField();
         btnPrijava = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Email");
 
+        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEmailKeyReleased(evt);
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Lozinka");
 
+        pswLozinka.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         pswLozinka.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 pswLozinkaKeyReleased(evt);
             }
         });
 
+        btnPrijava.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnPrijava.setText("Prijava");
         btnPrijava.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrijavaActionPerformed(evt);
             }
         });
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\K1R4\\Desktop\\icons8_grand_master_key_100px_1.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,26 +88,28 @@ public class Autorizacija extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEmail)
-                            .addComponent(pswLozinka)))
+                            .addComponent(pswLozinka)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel2)))
+                        .addGap(45, 45, 45)
+                        .addComponent(btnPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(btnPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -107,7 +119,7 @@ public class Autorizacija extends javax.swing.JFrame {
                 .addComponent(pswLozinka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnPrijava)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -137,6 +149,7 @@ public class Autorizacija extends javax.swing.JFrame {
     private javax.swing.JButton btnPrijava;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField pswLozinka;
     private javax.swing.JTextField txtEmail;
     // End of variables declaration//GEN-END:variables
