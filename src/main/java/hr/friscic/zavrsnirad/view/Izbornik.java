@@ -32,6 +32,7 @@ public class Izbornik extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmNaslovGrana = new javax.swing.JMenu();
         jmiKlijenti = new javax.swing.JMenuItem();
@@ -44,8 +45,11 @@ public class Izbornik extends javax.swing.JFrame {
         jmiIzlaz = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(640, 426));
 
-        jmNaslovGrana.setText("NASLOV");
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\K1R4\\Downloads\\peter-broomfield-m3m-lnR90uM-unsplash.jpg")); // NOI18N
+
+        jmNaslovGrana.setText("GLAVNI IZBORNIK");
 
         jmiKlijenti.setText("Klijenti");
         jmiKlijenti.addActionListener(new java.awt.event.ActionListener() {
@@ -92,11 +96,11 @@ public class Izbornik extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 578, Short.MAX_VALUE)
+            .addComponent(jLabel2)
         );
 
         pack();
@@ -117,6 +121,7 @@ public class Izbornik extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JMenu jmNaslovGrana;

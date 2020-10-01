@@ -13,7 +13,7 @@ import hr.friscic.zavrsnirad.model.Operater;
  */
 public class Aplikacija {
     
-    public static final String NASLOV_APP="Izbornik";
+    public static final String NASLOV_APP="Glavni izbornik";
     
     public static Operater operater;
     
