@@ -17,7 +17,7 @@ public class ObradaVozilo extends Obrada<Vozilo> {
 
     @Override
     public List<Vozilo> getPodaci() {
-        return sesion.createQuery("from Vozilo").list();
+        return session.createQuery("from Vozilo").list();
     }
 
     @Override

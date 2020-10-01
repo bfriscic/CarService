@@ -17,7 +17,7 @@ public class ObradaMarka extends Obrada<Marka> {
 
     @Override
     public List<Marka> getPodaci() {
-        return sesion.createQuery("from Marka").list();
+        return session.createQuery("from Marka").list();
     }
 
     @Override

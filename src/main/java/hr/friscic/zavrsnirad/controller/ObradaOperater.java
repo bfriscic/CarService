@@ -18,7 +18,7 @@ public class ObradaOperater extends ObradaOsoba<Operater> {
 
     public Operater autoriziraj(String email, char[] lozinka) {
 
-        Operater operater = (Operater) sesion.createQuery(
+        Operater operater = (Operater) session.createQuery(
                 "from Operater o where o.email=:email")
                 .setParameter("email", email).getSingleResult();
 
@@ -48,7 +48,7 @@ public class ObradaOperater extends ObradaOsoba<Operater> {
 
     @Override
     public List<Operater> getPodaci() {
-        return sesion.createQuery("from Operater").list();
+        return session.createQuery("from Operater").list();
     }
 
 }

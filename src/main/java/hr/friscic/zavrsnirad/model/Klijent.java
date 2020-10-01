@@ -25,4 +25,11 @@ public class Klijent extends Osoba {
         this.kontaktbroj = kontaktbroj;
     }
 
+    @Override
+    public String toString() {
+        return getImePrezime();
+    }
+    
+    
+
 }

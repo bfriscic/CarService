@@ -48,7 +48,7 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
 
     @Override
     public List<Klijent> getPodaci() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return session.createQuery("from Klijent").list();
     }
 
 }

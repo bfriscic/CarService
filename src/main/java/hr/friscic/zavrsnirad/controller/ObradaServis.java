@@ -18,7 +18,7 @@ public class ObradaServis extends Obrada<Servis> {
 
     @Override
     public List<Servis> getPodaci() {
-        return sesion.createQuery("from Servis").list();
+        return session.createQuery("from Servis").list();
     }
 
     @Override
