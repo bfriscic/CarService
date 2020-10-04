@@ -5,8 +5,9 @@
  */
 package hr.friscic.zavrsnirad.view;
 
-import hr.friscic.zavrsnirad.controller.ObradaRadnik;
-import hr.friscic.zavrsnirad.model.Radnik;
+import hr.friscic.zavrsnirad.controller.ObradaMarka;
+
+import hr.friscic.zavrsnirad.model.Marka;
 import hr.friscic.zavrsnirad.utility.Iznimka;
 import javax.swing.DefaultListModel;
 
@@ -14,18 +15,18 @@ import javax.swing.DefaultListModel;
  *
  * @author K1R4
  */
-public class Radnici extends javax.swing.JFrame {
+public class Marke extends javax.swing.JFrame {
 
-    private ObradaRadnik obrada;
-    private Radnik entitet;
+    private ObradaMarka obrada;
+    private Marka entitet;
 
     /**
-     * Creates new form Radnici
+     * Creates new form Marke
      */
-    public Radnici() {
+    public Marke() {
         initComponents();
-        obrada = new ObradaRadnik();
-        setTitle("SMV APP - Radnici");
+        obrada = new ObradaMarka();
+        setTitle("SMV APP - Marke");
         ucitajPodatke();
     }
 
@@ -42,15 +43,9 @@ public class Radnici extends javax.swing.JFrame {
         lstPodaci = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtIme = new javax.swing.JTextField();
+        txtNaziv = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtPrezime = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtOib = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtBrojUgovora = new javax.swing.JTextField();
+        txtModel = new javax.swing.JTextField();
         btnDodaj = new javax.swing.JButton();
         btnPromjeni = new javax.swing.JButton();
         btnObrisi = new javax.swing.JButton();
@@ -65,41 +60,23 @@ public class Radnici extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstPodaci);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Podaci o radniku"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Marke vozila"));
 
-        jLabel1.setText("Ime");
+        jLabel1.setText("Naziv");
 
-        txtIme.addActionListener(new java.awt.event.ActionListener() {
+        txtNaziv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtImeActionPerformed(evt);
+                txtNazivActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Prezime");
+        jLabel2.setText("Model");
 
-        txtPrezime.addActionListener(new java.awt.event.ActionListener() {
+        txtModel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrezimeActionPerformed(evt);
+                txtModelActionPerformed(evt);
             }
         });
-
-        jLabel3.setText("Oib");
-
-        txtOib.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtOibActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Email");
-
-        txtEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setText("Broj ugovora");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,22 +89,10 @@ public class Radnici extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(110, 110, 110))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                         .addGap(108, 108, 108))
-                    .addComponent(txtIme)
-                    .addComponent(txtPrezime)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(97, 97, 97))
-                    .addComponent(txtOib)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(77, 77, 77))
-                    .addComponent(txtEmail)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(71, 71, 71))
-                    .addComponent(txtBrojUgovora))
+                    .addComponent(txtNaziv)
+                    .addComponent(txtModel))
                 .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
@@ -136,24 +101,12 @@ public class Radnici extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIme, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                .addComponent(txtNaziv)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPrezime, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtOib, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtBrojUgovora, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                .addGap(11, 11, 11))
+                .addComponent(txtModel)
+                .addGap(41, 41, 41))
         );
 
         btnDodaj.setText("Dodaj");
@@ -204,18 +157,19 @@ public class Radnici extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnDodaj)
                             .addComponent(btnPromjeni)
                             .addComponent(btnObrisi))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(172, 172, 172))
                     .addComponent(jScrollPane1))
                 .addGap(33, 33, 33))
         );
 
-        jPanel1.getAccessibleContext().setAccessibleName("Podaci o radniku");
+        jPanel1.getAccessibleContext().setAccessibleName("Podaci o markama vozila");
 
         pack();
         setLocationRelativeTo(null);
@@ -231,34 +185,24 @@ public class Radnici extends javax.swing.JFrame {
             return;
         }
 
-        txtIme.setText(entitet.getIme());
-        txtPrezime.setText(entitet.getPrezime());
-        txtOib.setText(entitet.getOib());
-        txtEmail.setText(entitet.getEmail());
-        txtBrojUgovora.setText(entitet.getBrojugovora());
+        txtNaziv.setText(entitet.getNaziv());
+        txtModel.setText(entitet.getModel());
+
 
     }//GEN-LAST:event_lstPodaciValueChanged
 
-    private void txtPrezimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrezimeActionPerformed
+    private void txtModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPrezimeActionPerformed
+    }//GEN-LAST:event_txtModelActionPerformed
 
-    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+    private void txtNazivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNazivActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailActionPerformed
-
-    private void txtOibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOibActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtOibActionPerformed
-
-    private void txtImeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtImeActionPerformed
+    }//GEN-LAST:event_txtNazivActionPerformed
 
     private void btnDodajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajActionPerformed
 
         lblPoruka.setText("");
-        entitet = new Radnik();
+        entitet = new Marka();
 
         postaviVrijednostiUEntitet();
 
@@ -316,42 +260,31 @@ public class Radnici extends javax.swing.JFrame {
     private javax.swing.JButton btnPromjeni;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblPoruka;
-    private javax.swing.JList<Radnik> lstPodaci;
-    private javax.swing.JTextField txtBrojUgovora;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtIme;
-    private javax.swing.JTextField txtOib;
-    private javax.swing.JTextField txtPrezime;
+    private javax.swing.JList<Marka> lstPodaci;
+    private javax.swing.JTextField txtModel;
+    private javax.swing.JTextField txtNaziv;
     // End of variables declaration//GEN-END:variables
 
     private void ucitajPodatke() {
-        DefaultListModel<Radnik> m = new DefaultListModel<>();
-        obrada.getPodaci().forEach(r -> m.addElement(r));
+        DefaultListModel<Marka> m = new DefaultListModel<>();
+        obrada.getPodaci().forEach(ma -> m.addElement(ma));
 
         lstPodaci.setModel(m);
 
     }
 
     private void ocistiPolja() {
-        txtIme.setText("");
-        txtPrezime.setText("");
-        txtOib.setText("");
-        txtEmail.setText("");
-        txtBrojUgovora.setText("");
+        txtNaziv.setText("");
+        txtModel.setText("");
+
     }
 
     private void postaviVrijednostiUEntitet() {
-        entitet.setIme(txtIme.getText());
-        entitet.setPrezime(txtPrezime.getText());
-        entitet.setOib(txtOib.getText());
-        entitet.setEmail(txtEmail.getText());
-        entitet.setBrojugovora(txtBrojUgovora.getText());
+        entitet.setNaziv(txtNaziv.getText());
+        entitet.setModel(txtModel.getText());
 
         obrada.setEntitet(entitet);
     }

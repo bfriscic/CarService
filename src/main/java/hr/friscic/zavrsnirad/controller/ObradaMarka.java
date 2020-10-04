@@ -28,7 +28,8 @@ public class ObradaMarka extends Obrada<Marka> {
 
     @Override
     protected void kontrolaUpdate() throws Iznimka {
-
+        kontrolaModel();
+        kontrolaNaziv();
     }
 
     @Override
