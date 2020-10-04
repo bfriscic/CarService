@@ -28,6 +28,7 @@ public class Start {
         //HibernateUtil.getSessionFactory().openSession();
         //PocetniInsert.izvedi();
         //PocetniInsert.adminOperater();
+        //PocetniInsert.radnici();
     }
 
 }

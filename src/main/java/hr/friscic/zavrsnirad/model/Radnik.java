@@ -25,5 +25,10 @@ public class Radnik extends Osoba {
     public void setBrojugovora(String brojugovora) {
         this.brojugovora = brojugovora;
     }
+    
+     @Override
+    public String toString() {
+        return getImePrezime();
+    }
 
 }
