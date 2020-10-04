@@ -28,7 +28,8 @@ public class ObradaRadnik extends ObradaOsoba<Radnik> {
 
     @Override
     protected void kontrolaUpdate() throws Iznimka {
-
+        super.kontrolaCreate();
+        kontrolaBrojUgovora();
     }
 
     @Override
