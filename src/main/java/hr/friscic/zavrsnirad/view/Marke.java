@@ -187,6 +187,8 @@ public class Marke extends javax.swing.JFrame {
 
         txtNaziv.setText(entitet.getNaziv());
         txtModel.setText(entitet.getModel());
+        
+        btnObrisi.setVisible(entitet.getVozila().size()==0);
 
 
     }//GEN-LAST:event_lstPodaciValueChanged

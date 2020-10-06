@@ -53,5 +53,14 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
     public List<Klijent> getPodaci() {
         return session.createQuery("from Klijent").list();
     }
+    
+    public List<Klijent> getPodaci(String uvjet) {
+        return session.createQuery("from Klijent k "
+              + " where concat(k.ime, ' ', k.prezime, ' ', k.oib) "
+              + " like :uvjet ")
+              .setParameter("uvjet", "%"+uvjet+"%")
+              .setMaxResults(20)
+              .list();
+    }
 
 }
