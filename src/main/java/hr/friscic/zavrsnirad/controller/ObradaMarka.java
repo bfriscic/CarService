@@ -34,7 +34,9 @@ public class ObradaMarka extends Obrada<Marka> {
 
     @Override
     protected void kontrolaDelete() throws Iznimka {
-
+        if (entitet.getVozila().size() > 0) {
+            throw new Iznimka("Marku vozila trenutno nije moguće obrisati!");
+        }
     }
 
     private void kontrolaModel() throws Iznimka {

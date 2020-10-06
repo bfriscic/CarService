@@ -35,7 +35,9 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
 
     @Override
     protected void kontrolaDelete() throws Iznimka {
-
+        if (entitet.getVozila().size() > 0) {
+            throw new Iznimka("Klijenta se ne može obrisati jer ima jedno ili više vozila!");
+        }
     }
 
     private void kontrolaKontaktBroj() throws Iznimka {

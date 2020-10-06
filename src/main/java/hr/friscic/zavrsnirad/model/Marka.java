@@ -5,7 +5,10 @@
  */
 package hr.friscic.zavrsnirad.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  * Klasa Marka se odnosi na marku vozila poput Audi,Volvo,Man,Ducati itd.
@@ -17,6 +20,17 @@ public class Marka extends Entitet {
 
     private String naziv;
     private String model;
+
+    @OneToMany(mappedBy = "marka")
+    private List<Vozilo> vozila = new ArrayList<>();
+
+    public List<Vozilo> getVozila() {
+        return vozila;
+    }
+
+    public void setVozila(List<Vozilo> vozila) {
+        this.vozila = vozila;
+    }
 
     public String getNaziv() {
         return naziv;

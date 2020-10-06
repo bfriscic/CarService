@@ -5,7 +5,10 @@
  */
 package hr.friscic.zavrsnirad.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  * Klasa Klijent se odnosi na klijente koji koriste usluge servisa.
@@ -17,6 +20,9 @@ public class Klijent extends Osoba {
 
     private String kontaktbroj;
 
+    @OneToMany(mappedBy = "klijent")
+    private List<Vozilo> vozila = new ArrayList<>();
+
     public String getKontaktbroj() {
         return kontaktbroj;
     }
@@ -25,11 +31,17 @@ public class Klijent extends Osoba {
         this.kontaktbroj = kontaktbroj;
     }
 
+    public List<Vozilo> getVozila() {
+        return vozila;
+    }
+
+    public void setVozila(List<Vozilo> vozila) {
+        this.vozila = vozila;
+    }
+
     @Override
     public String toString() {
         return getImePrezime();
     }
-    
-    
 
 }
