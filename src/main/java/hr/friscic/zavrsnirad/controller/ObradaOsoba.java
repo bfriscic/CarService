@@ -26,7 +26,10 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
 
     @Override
     protected void kontrolaUpdate() throws Iznimka {
-        
+        kontrolaIme();
+        kontrolaPrezime();
+        kontrolaOib();
+        kontrolaEmail();
     }
 
     @Override

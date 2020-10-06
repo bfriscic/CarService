@@ -23,13 +23,15 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
     @Override
     protected void kontrolaCreate() throws Iznimka {
         super.kontrolaCreate();
+        kontrolaOibBazaKreiraj();
         kontrolaKontaktBroj();
 
     }
 
     @Override
     protected void kontrolaUpdate() throws Iznimka {
-        super.kontrolaCreate();
+        super.kontrolaUpdate();
+        kontrolaOibBazaPromjeni();
         kontrolaKontaktBroj();
     }
 
@@ -53,14 +55,40 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
     public List<Klijent> getPodaci() {
         return session.createQuery("from Klijent").list();
     }
-    
+
     public List<Klijent> getPodaci(String uvjet) {
         return session.createQuery("from Klijent k "
-              + " where concat(k.ime, ' ', k.prezime, ' ', k.oib) "
-              + " like :uvjet ")
-              .setParameter("uvjet", "%"+uvjet+"%")
-              .setMaxResults(20)
-              .list();
+                + " where concat(k.ime, ' ', k.prezime, ' ', k.oib) "
+                + " like :uvjet ")
+                .setParameter("uvjet", "%" + uvjet + "%")
+                .setMaxResults(20)
+                .list();
+    }
+
+    private void kontrolaOibBazaKreiraj() throws Iznimka {
+        List<Klijent> lista = session.createQuery(""
+                + " from Klijent k "
+                + " where k.oib=:oib "
+        )
+                .setParameter("oib", entitet.getOib())
+                .list();
+        if (lista.size() > 0) {
+            throw new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
+        }
+        
+    }
+        private void kontrolaOibBazaPromjeni() throws Iznimka{
+       List<Klijent> lista = session.createQuery(""
+               + " from Klijent k "
+               + " where k.oib=:oib and k.id!=:id"
+               )
+               .setParameter("oib", entitet.getOib())
+               .setParameter("id", entitet.getId())
+               .list();
+       if(lista.size()>0){
+           throw  new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
+       }
+
     }
 
 }

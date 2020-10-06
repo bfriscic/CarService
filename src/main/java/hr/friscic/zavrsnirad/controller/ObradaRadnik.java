@@ -23,12 +23,14 @@ public class ObradaRadnik extends ObradaOsoba<Radnik> {
     @Override
     protected void kontrolaCreate() throws Iznimka {
         super.kontrolaCreate();
+        kontrolaOibBazaKreiraj();
         kontrolaBrojUgovora();
     }
 
     @Override
     protected void kontrolaUpdate() throws Iznimka {
-        super.kontrolaCreate();
+        super.kontrolaUpdate();
+        kontrolaOibBazaPromjeni();
         kontrolaBrojUgovora();
     }
 
@@ -40,6 +42,33 @@ public class ObradaRadnik extends ObradaOsoba<Radnik> {
     private void kontrolaBrojUgovora() throws Iznimka {
         if (entitet.getBrojugovora().isEmpty()) {
             throw new Iznimka("Broj ugovora ne smije biti prazan!");
+        }
+
+    }
+
+    private void kontrolaOibBazaKreiraj() throws Iznimka {
+        List<Radnik> lista = session.createQuery(""
+                + " from Radnik r "
+                + " where r.oib=:oib "
+        )
+                .setParameter("oib", entitet.getOib())
+                .list();
+        if (lista.size() > 0) {
+            throw new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
+        }
+
+    }
+
+    private void kontrolaOibBazaPromjeni() throws Iznimka {
+        List<Radnik> lista = session.createQuery(""
+                + " from Radnik r "
+                + " where r.oib=:oib and r.id!=:id"
+        )
+                .setParameter("oib", entitet.getOib())
+                .setParameter("id", entitet.getId())
+                .list();
+        if (lista.size() > 0) {
+            throw new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
         }
 
     }
