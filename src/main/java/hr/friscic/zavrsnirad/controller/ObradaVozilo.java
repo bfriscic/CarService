@@ -61,11 +61,8 @@ public class ObradaVozilo extends Obrada<Vozilo> {
     }
 
     private void kontrolaVrstaVozila() throws Iznimka {
-        if (entitet.getVrstavozila() == null || entitet.getVrstavozila().isEmpty()) {
-            throw new Iznimka("Vrstu vozila je potrebno unijeti! Npr. automobil, motocikl ili tegljač.");
-        }
-        if (!entitet.getVrstavozila().matches(("^[a-zA-ZÆÐƎƏƐƔĲŊŒẞÞǷȜæðǝəɛɣĳŋœĸſßþƿȝĄƁÇĐƊĘĦĮƘŁØƠŞȘŢȚŦŲƯY̨Ƴąɓçđɗęħįƙłøơşșţțŧųưy̨ƴÁÀÂÄǍĂĀÃÅǺĄÆǼǢƁĆĊĈČÇĎḌĐƊÐÉÈĖÊËĚĔĒĘẸƎƏƐĠĜǦĞĢƔáàâäǎăāãåǻąæǽǣɓćċĉčçďḍđɗðéèėêëěĕēęẹǝəɛġĝǧğģɣĤḤĦIÍÌİÎÏǏĬĪĨĮỊĲĴĶƘĹĻŁĽĿʼNŃN̈ŇÑŅŊÓÒÔÖǑŎŌÕŐỌØǾƠŒĥḥħıíìiîïǐĭīĩįịĳĵķƙĸĺļłľŀŉńn̈ňñņŋóòôöǒŏōõőọøǿơœŔŘŖŚŜŠŞȘṢẞŤŢṬŦÞÚÙÛÜǓŬŪŨŰŮŲỤƯẂẀŴẄǷÝỲŶŸȲỸƳŹŻŽẒŕřŗſśŝšşșṣßťţṭŧþúùûüǔŭūũűůųụưẃẁŵẅƿýỳŷÿȳỹƴźżžẓ\\s-,.\\']+$"))) {
-            throw new Iznimka("Vrsta vozila nije ispravna! Dozvoljen je unos samo slova.");
+        if (entitet.getVrstavozila() == null) {
+            throw new Iznimka("Vrstu vozila je potrebno odabrati!");
         }
 
     }

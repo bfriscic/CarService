@@ -8,6 +8,8 @@ package hr.friscic.zavrsnirad.model;
 import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
 /**
@@ -21,7 +23,15 @@ public class Vozilo extends Entitet {
     private LocalDateTime godinaproizvodnje;
     private String boja;
     private String brojsasije;
-    private String vrstavozila;
+
+    @Enumerated(EnumType.STRING)
+    private VrstaVozila vrstavozila;
+
+    public static enum VrstaVozila {
+        Automobil,
+        Motocikl,
+        Tegljač
+    }
 
     @ManyToOne
     private Klijent klijent;
@@ -29,11 +39,11 @@ public class Vozilo extends Entitet {
     @ManyToOne
     private Marka marka;
 
-    public String getVrstavozila() {
+    public VrstaVozila getVrstavozila() {
         return vrstavozila;
     }
 
-    public void setVrstavozila(String vrstavozila) {
+    public void setVrstavozila(VrstaVozila vrstavozila) {
         this.vrstavozila = vrstavozila;
     }
 
@@ -75,6 +85,11 @@ public class Vozilo extends Entitet {
 
     public void setKlijent(Klijent klijent) {
         this.klijent = klijent;
+    }
+
+    @Override
+    public String toString() {
+        return getVrstavozila() + " " + getMarka().getNaziv() + " " + getMarka().getModel() + " (" + getKlijent().getImePrezime() + ")";
     }
 
 }
