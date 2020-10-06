@@ -30,7 +30,10 @@ public class ObradaVozilo extends Obrada<Vozilo> {
 
     @Override
     protected void kontrolaUpdate() throws Iznimka {
-
+        kontrolaBoja();
+        kontrolaBrojSasije();
+        kontrolaGodinaProizvodnje();
+        kontrolaVrstaVozila();
     }
 
     @Override
@@ -56,7 +59,7 @@ public class ObradaVozilo extends Obrada<Vozilo> {
 
     private void kontrolaGodinaProizvodnje() throws Iznimka {
         if (entitet.getGodinaproizvodnje() == null) {
-            throw new Iznimka("Potrebno je unijeti datum! Format unosa je dd.mm.yyyy");
+            throw new Iznimka("Potrebno je unijeti godinu proizvodnje vozila!");
         }
     }
 

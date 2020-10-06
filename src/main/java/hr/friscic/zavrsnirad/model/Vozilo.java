@@ -5,8 +5,9 @@
  */
 package hr.friscic.zavrsnirad.model;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -20,7 +21,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Vozilo extends Entitet {
 
-    private LocalDateTime godinaproizvodnje;
+    private Date godinaproizvodnje;
     private String boja;
     private String brojsasije;
 
@@ -55,11 +56,11 @@ public class Vozilo extends Entitet {
         this.marka = marka;
     }
 
-    public LocalDateTime getGodinaproizvodnje() {
+    public Date getGodinaproizvodnje() {
         return godinaproizvodnje;
     }
 
-    public void setGodinaproizvodnje(LocalDateTime godinaproizvodnje) {
+    public void setGodinaproizvodnje(Date godinaproizvodnje) {
         this.godinaproizvodnje = godinaproizvodnje;
     }
 

@@ -14,6 +14,7 @@ import hr.friscic.zavrsnirad.model.Marka;
 import hr.friscic.zavrsnirad.model.Osoba;
 import hr.friscic.zavrsnirad.model.Vozilo;
 import hr.friscic.zavrsnirad.utility.Iznimka;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -76,7 +77,7 @@ public class TestObrade {
 
         w.setBoja("bijela");
         w.setBrojsasije("1FT7W2BT9CEA54193");
-        w.setGodinaproizvodnje(LocalDateTime.now());
+        w.setGodinaproizvodnje(Date.from(Instant.MIN));
 
         ObradaVozilo obradaW = new ObradaVozilo();
 

@@ -20,6 +20,7 @@ public class Izbornik extends javax.swing.JFrame {
         setTitle("SMV APP");
 
         jmiOperateri.setVisible(Aplikacija.isAdmin());
+        jmiMarke.setVisible(Aplikacija.isAdmin());
 
     }
 
