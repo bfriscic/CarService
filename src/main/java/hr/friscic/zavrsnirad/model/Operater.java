@@ -33,4 +33,11 @@ public class Operater extends Osoba {
         this.uloga = uloga;
     }
 
+    @Override
+    public String toString() {
+        return getImePrezime() + " (" + getUloga() + ")";
+    }
+    
+    
+
 }

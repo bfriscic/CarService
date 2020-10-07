@@ -128,7 +128,7 @@ public class Izbornik extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiIzlazActionPerformed
 
     private void jmiOperateriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiOperateriActionPerformed
-        // TODO add your handling code here:
+        new Operateri().setVisible(true);
     }//GEN-LAST:event_jmiOperateriActionPerformed
 
     private void jmiKlijentiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiKlijentiActionPerformed
