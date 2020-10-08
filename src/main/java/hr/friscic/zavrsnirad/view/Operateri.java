@@ -6,9 +6,7 @@
 package hr.friscic.zavrsnirad.view;
 
 import hr.friscic.zavrsnirad.controller.ObradaOperater;
-import hr.friscic.zavrsnirad.controller.ObradaRadnik;
 import hr.friscic.zavrsnirad.model.Operater;
-import hr.friscic.zavrsnirad.model.Radnik;
 import hr.friscic.zavrsnirad.utility.Iznimka;
 import javax.swing.DefaultListModel;
 

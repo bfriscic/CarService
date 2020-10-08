@@ -8,7 +8,6 @@ package hr.friscic.zavrsnirad.controller;
 import hr.friscic.zavrsnirad.utility.HibernateUtil;
 import hr.friscic.zavrsnirad.utility.Iznimka;
 import java.util.List;
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 
 /**

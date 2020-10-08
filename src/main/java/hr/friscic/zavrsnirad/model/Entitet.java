@@ -11,16 +11,16 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
- *Nadklasa koja generira primarne ključeve u podklasama.
+ * Nadklasa koja generira primarne ključeve u podklasama.
+ *
  * @author K1R4
  */
-
 @MappedSuperclass
 public abstract class Entitet {
-    
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     public Long getId() {
         return id;
@@ -29,8 +29,5 @@ public abstract class Entitet {
     public void setId(Long id) {
         this.id = id;
     }
-   
-   
-   
-    
+
 }

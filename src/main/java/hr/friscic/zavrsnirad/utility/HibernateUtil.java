@@ -16,9 +16,10 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
  * @author Korisnik
  */
 public class HibernateUtil {
-    
+
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
+
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
@@ -39,13 +40,11 @@ public class HibernateUtil {
         }
         return sessionFactory;
     }
+
     public static void shutdown() {
         if (registry != null) {
             StandardServiceRegistryBuilder.destroy(registry);
         }
     }
 
-    
-    
-    
 }

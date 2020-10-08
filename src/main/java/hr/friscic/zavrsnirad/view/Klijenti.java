@@ -9,8 +9,6 @@ import hr.friscic.zavrsnirad.controller.ObradaKlijent;
 import hr.friscic.zavrsnirad.model.Klijent;
 import hr.friscic.zavrsnirad.utility.Iznimka;
 import java.awt.event.KeyEvent;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 
 /**
@@ -18,7 +16,7 @@ import javax.swing.DefaultListModel;
  * @author K1R4
  */
 public class Klijenti extends javax.swing.JFrame {
-    
+
     private ObradaKlijent obrada;
     private Klijent entitet;
 
@@ -258,20 +256,20 @@ public class Klijenti extends javax.swing.JFrame {
         if (evt.getValueIsAdjusting()) {
             return;
         }
-        
+
         entitet = lstPodaci.getSelectedValue();
         if (entitet == null) {
             return;
         }
-        
+
         txtIme.setText(entitet.getIme());
         txtPrezime.setText(entitet.getPrezime());
         txtOib.setText(entitet.getOib());
         txtEmail.setText(entitet.getEmail());
         txtKontaktBroj.setText(entitet.getKontaktbroj());
-        
+
         // btnObrisi.setVisible(entitet.getVozila().size()==0);
-        
+
     }//GEN-LAST:event_lstPodaciValueChanged
 
     private void txtPrezimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrezimeActionPerformed
@@ -291,12 +289,12 @@ public class Klijenti extends javax.swing.JFrame {
     }//GEN-LAST:event_txtImeActionPerformed
 
     private void btnDodajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajActionPerformed
-        
+
         lblPoruka.setText("");
         entitet = new Klijent();
-        
+
         postaviVrijednostiUEntitet();
-        
+
         obrada.setEntitet(entitet);
         try {
             obrada.create();
@@ -305,16 +303,16 @@ public class Klijenti extends javax.swing.JFrame {
         } catch (Iznimka ex) {
             lblPoruka.setText(ex.getPoruka());
         }
-        
+
     }//GEN-LAST:event_btnDodajActionPerformed
 
     private void btnPromjeniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromjeniActionPerformed
-        entitet=lstPodaci.getSelectedValue();
-        if(entitet==null){
+        entitet = lstPodaci.getSelectedValue();
+        if (entitet == null) {
             return;
         }
         postaviVrijednostiUEntitet();
-        
+
         try {
             obrada.update();
             ucitajPodatke();
@@ -322,18 +320,18 @@ public class Klijenti extends javax.swing.JFrame {
         } catch (Iznimka e) {
             lblPoruka.setText(e.getPoruka());
         }
-        
-        
+
+
     }//GEN-LAST:event_btnPromjeniActionPerformed
 
     private void btnObrisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObrisiActionPerformed
-        entitet=lstPodaci.getSelectedValue();
-        if(entitet==null){
+        entitet = lstPodaci.getSelectedValue();
+        if (entitet == null) {
             return;
         }
-        
+
         obrada.setEntitet(entitet);
-        
+
         try {
             obrada.delete();
             ucitajPodatke();
@@ -341,16 +339,16 @@ public class Klijenti extends javax.swing.JFrame {
         } catch (Iznimka e) {
             lblPoruka.setText(e.getPoruka());
         }
-        
+
     }//GEN-LAST:event_btnObrisiActionPerformed
 
     private void btnTraziActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraziActionPerformed
         ucitajPodatke();
-       
+
     }//GEN-LAST:event_btnTraziActionPerformed
 
     private void txtUvjetKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUvjetKeyReleased
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             ucitajPodatke();
         }
     }//GEN-LAST:event_txtUvjetKeyReleased
@@ -385,9 +383,9 @@ public class Klijenti extends javax.swing.JFrame {
     private void ucitajPodatke() {
         DefaultListModel<Klijent> m = new DefaultListModel<>();
         obrada.getPodaci(txtUvjet.getText()).forEach(k -> m.addElement(k));
-        
+
         lstPodaci.setModel(m);
-        
+
     }
 
     private void ocistiPolja() {
@@ -404,7 +402,7 @@ public class Klijenti extends javax.swing.JFrame {
         entitet.setOib(txtOib.getText());
         entitet.setEmail(txtEmail.getText());
         entitet.setKontaktbroj(txtKontaktBroj.getText());
-        
+
         obrada.setEntitet(entitet);
     }
 }

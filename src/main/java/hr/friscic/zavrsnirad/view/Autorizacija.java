@@ -23,7 +23,6 @@ public class Autorizacija extends javax.swing.JFrame {
      */
     public Autorizacija() {
         initComponents();
-        
 
         txtEmail.requestFocus();
         txtEmail.setText("bernard.friscic@gmail.com");

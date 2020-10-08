@@ -37,7 +37,5 @@ public class Operater extends Osoba {
     public String toString() {
         return getImePrezime() + " (" + getUloga() + ")";
     }
-    
-    
 
 }

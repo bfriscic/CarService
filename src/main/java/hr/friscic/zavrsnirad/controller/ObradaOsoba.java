@@ -34,9 +34,9 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
 
     @Override
     protected void kontrolaDelete() throws Iznimka {
-        
+
     }
-    
+
     protected void kontrolaIme() throws Iznimka {
         if (entitet.getIme().isEmpty() || entitet.getIme() == null) {
             throw new Iznimka("Ime je obavezno, ne može biti prazno!");

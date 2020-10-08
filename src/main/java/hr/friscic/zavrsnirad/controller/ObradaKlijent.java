@@ -7,7 +7,6 @@ package hr.friscic.zavrsnirad.controller;
 
 import hr.friscic.zavrsnirad.model.Klijent;
 import hr.friscic.zavrsnirad.utility.Iznimka;
-import hr.friscic.zavrsnirad.utility.Oib;
 import java.util.List;
 
 /**
@@ -75,19 +74,20 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
         if (lista.size() > 0) {
             throw new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
         }
-        
+
     }
-        private void kontrolaOibBazaPromjeni() throws Iznimka{
-       List<Klijent> lista = session.createQuery(""
-               + " from Klijent k "
-               + " where k.oib=:oib and k.id!=:id"
-               )
-               .setParameter("oib", entitet.getOib())
-               .setParameter("id", entitet.getId())
-               .list();
-       if(lista.size()>0){
-           throw  new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
-       }
+
+    private void kontrolaOibBazaPromjeni() throws Iznimka {
+        List<Klijent> lista = session.createQuery(""
+                + " from Klijent k "
+                + " where k.oib=:oib and k.id!=:id"
+        )
+                .setParameter("oib", entitet.getOib())
+                .setParameter("id", entitet.getId())
+                .list();
+        if (lista.size() > 0) {
+            throw new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
+        }
 
     }
 

@@ -7,7 +7,6 @@ package hr.friscic.zavrsnirad.utility;
 
 import java.net.URL;
 import java.util.Scanner;
-import javax.swing.text.Document;
 import org.jsoup.Jsoup;
 import us.codecraft.xsoup.Xsoup;
 

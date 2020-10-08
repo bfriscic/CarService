@@ -17,7 +17,7 @@ public class Iznimka extends Exception {
         this.poruka = poruka;
 
     }
-    
+
     public String getPoruka() {
         return poruka;
     }
