@@ -9,13 +9,14 @@ import hr.friscic.zavrsnirad.controller.ObradaOperater;
 import hr.friscic.zavrsnirad.model.Operater;
 import hr.friscic.zavrsnirad.utility.Iznimka;
 import javax.swing.DefaultListModel;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
  * @author K1R4
  */
 public class Operateri extends javax.swing.JFrame {
-
+    
     private ObradaOperater obrada;
     private Operater entitet;
 
@@ -52,7 +53,7 @@ public class Operateri extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtUloga = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        pswLozinka = new javax.swing.JPasswordField();
+        txtLozinka = new javax.swing.JTextField();
         btnDodaj = new javax.swing.JButton();
         btnPromjeni = new javax.swing.JButton();
         btnObrisi = new javax.swing.JButton();
@@ -120,7 +121,7 @@ public class Operateri extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(pswLozinka, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtLozinka, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtUloga, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -166,7 +167,7 @@ public class Operateri extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pswLozinka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtLozinka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -239,17 +240,19 @@ public class Operateri extends javax.swing.JFrame {
         if (evt.getValueIsAdjusting()) {
             return;
         }
-
+        
         entitet = lstPodaci.getSelectedValue();
         if (entitet == null) {
             return;
         }
-
+        
         txtIme.setText(entitet.getIme());
         txtPrezime.setText(entitet.getPrezime());
         txtOib.setText(entitet.getOib());
         txtEmail.setText(entitet.getEmail());
-
+        txtUloga.setText(entitet.getUloga());
+        txtLozinka.setText(entitet.getLozinka());
+        
 
     }//GEN-LAST:event_lstPodaciValueChanged
 
@@ -270,12 +273,12 @@ public class Operateri extends javax.swing.JFrame {
     }//GEN-LAST:event_txtImeActionPerformed
 
     private void btnDodajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajActionPerformed
-
+        
         lblPoruka.setText("");
         entitet = new Operater();
-
+        
         postaviVrijednostiUEntitet();
-
+        
         obrada.setEntitet(entitet);
         try {
             obrada.create();
@@ -293,7 +296,7 @@ public class Operateri extends javax.swing.JFrame {
             return;
         }
         postaviVrijednostiUEntitet();
-
+        
         try {
             obrada.update();
             ucitajPodatke();
@@ -301,7 +304,7 @@ public class Operateri extends javax.swing.JFrame {
         } catch (Iznimka e) {
             lblPoruka.setText(e.getPoruka());
         }
-
+        
 
     }//GEN-LAST:event_btnPromjeniActionPerformed
 
@@ -310,9 +313,9 @@ public class Operateri extends javax.swing.JFrame {
         if (entitet == null) {
             return;
         }
-
+        
         obrada.setEntitet(entitet);
-
+        
         try {
             obrada.delete();
             ucitajPodatke();
@@ -338,9 +341,9 @@ public class Operateri extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblPoruka;
     private javax.swing.JList<Operater> lstPodaci;
-    private javax.swing.JPasswordField pswLozinka;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtIme;
+    private javax.swing.JTextField txtLozinka;
     private javax.swing.JTextField txtOib;
     private javax.swing.JTextField txtPrezime;
     private javax.swing.JTextField txtUloga;
@@ -349,25 +352,29 @@ public class Operateri extends javax.swing.JFrame {
     private void ucitajPodatke() {
         DefaultListModel<Operater> m = new DefaultListModel<>();
         obrada.getPodaci().forEach(o -> m.addElement(o));
-
+        
         lstPodaci.setModel(m);
-
+        
     }
-
+    
     private void ocistiPolja() {
         txtIme.setText("");
         txtPrezime.setText("");
         txtOib.setText("");
         txtEmail.setText("");
-
+        txtUloga.setText("");
+        txtLozinka.setText("");
+        
     }
-
+    
     private void postaviVrijednostiUEntitet() {
         entitet.setIme(txtIme.getText());
         entitet.setPrezime(txtPrezime.getText());
         entitet.setOib(txtOib.getText());
         entitet.setEmail(txtEmail.getText());
-
+        entitet.setUloga(txtUloga.getText());
+        entitet.setLozinka(BCrypt.hashpw(txtLozinka.getText(), BCrypt.gensalt()));
+        
         obrada.setEntitet(entitet);
     }
 }

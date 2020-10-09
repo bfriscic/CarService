@@ -6,6 +6,8 @@
 package hr.friscic.zavrsnirad.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 /**
  *

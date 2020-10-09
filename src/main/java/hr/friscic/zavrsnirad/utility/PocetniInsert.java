@@ -27,7 +27,7 @@ public class PocetniInsert {
         operater.setIme("Bernard");
         operater.setPrezime("Friščić");
         operater.setOib(Oib.getOibIiCentrala());
-        operater.setUloga("oper");
+        operater.setUloga("Operater");
         operater.setEmail("bernard.friscic@gmail.com");
         operater.setLozinka(BCrypt.hashpw("b", BCrypt.gensalt()));
 
@@ -67,7 +67,7 @@ public class PocetniInsert {
         Operater operater = new Operater();
         operater.setIme("SMV");
         operater.setPrezime("Operater");
-        operater.setUloga("admin");
+        operater.setUloga("Administrator");
         operater.setOib(Oib.getOibIiCentrala());
         operater.setEmail("smv@smv.com");
         operater.setLozinka(BCrypt.hashpw("s", BCrypt.gensalt()));
