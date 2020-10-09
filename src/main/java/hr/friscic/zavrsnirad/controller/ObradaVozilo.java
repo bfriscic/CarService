@@ -38,7 +38,9 @@ public class ObradaVozilo extends Obrada<Vozilo> {
 
     @Override
     protected void kontrolaDelete() throws Iznimka {
-
+        if (entitet.getServisi().size() > 0) {
+            throw new Iznimka("Vozilo se ne može obrisati jer ima jedno ili više servisa u tijeku!");
+        }
     }
 
     private void kontrolaBoja() throws Iznimka {

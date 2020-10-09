@@ -5,11 +5,14 @@
  */
 package hr.friscic.zavrsnirad.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Klasa Vozilo se odnosi na vozilo koje je potrebno servisirati.
@@ -37,6 +40,17 @@ public class Vozilo extends Entitet {
 
     @ManyToOne
     private Marka marka;
+
+    @OneToMany(mappedBy = "vozilo")
+    private List<Servis> servisi = new ArrayList<>();
+
+    public List<Servis> getServisi() {
+        return servisi;
+    }
+
+    public void setServisi(List<Servis> servisi) {
+        this.servisi = servisi;
+    }
 
     public VrstaVozila getVrstavozila() {
         return vrstavozila;

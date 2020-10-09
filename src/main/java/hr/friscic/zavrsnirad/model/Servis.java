@@ -68,4 +68,11 @@ public class Servis extends Entitet {
         this.radnik = radnik;
     }
 
+    @Override
+    public String toString() {
+        return getNaziv() + " " + getVozilo();
+    }
+    
+    
+
 }
