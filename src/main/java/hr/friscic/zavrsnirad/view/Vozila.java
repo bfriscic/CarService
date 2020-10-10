@@ -52,7 +52,7 @@ public class Vozila extends javax.swing.JFrame {
 
         DatePickerSettings dps = new DatePickerSettings(new Locale("hr", "HR"));
         dps.setFormatForDatesBeforeCommonEra("dd.MM.yyyy");
-        dpiGodinaProizvodnje.setSettings(dps);
+        dpiDatumProizvodnje.setSettings(dps);
     }
 
     /**
@@ -74,7 +74,7 @@ public class Vozila extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         cmbVrstaVozila = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        dpiGodinaProizvodnje = new com.github.lgooddatepicker.components.DatePicker();
+        dpiDatumProizvodnje = new com.github.lgooddatepicker.components.DatePicker();
         jLabel5 = new javax.swing.JLabel();
         cmbKlijenti = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
@@ -107,7 +107,7 @@ public class Vozila extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Godina proizvodnje");
+        jLabel4.setText("Datum proizvodnje");
 
         jLabel5.setText("Klijent");
 
@@ -131,7 +131,7 @@ public class Vozila extends javax.swing.JFrame {
                     .addComponent(cmbKlijenti, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7)
                     .addComponent(cmbMarke, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dpiGodinaProizvodnje, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+                    .addComponent(dpiDatumProizvodnje, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -152,7 +152,7 @@ public class Vozila extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dpiGodinaProizvodnje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dpiDatumProizvodnje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -310,7 +310,7 @@ public class Vozila extends javax.swing.JFrame {
             }
         }
 
-        dpiGodinaProizvodnje.setDate(entitet.getGodinaproizvodnje().toInstant()
+        dpiDatumProizvodnje.setDate(entitet.getGodinaproizvodnje().toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate());
 
@@ -333,7 +333,7 @@ public class Vozila extends javax.swing.JFrame {
     private javax.swing.JComboBox<Klijent> cmbKlijenti;
     private javax.swing.JComboBox<Marka> cmbMarke;
     private javax.swing.JComboBox<String> cmbVrstaVozila;
-    private com.github.lgooddatepicker.components.DatePicker dpiGodinaProizvodnje;
+    private com.github.lgooddatepicker.components.DatePicker dpiDatumProizvodnje;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -352,8 +352,8 @@ public class Vozila extends javax.swing.JFrame {
         entitet.setBoja(txtBoja.getText());
         entitet.setBrojsasije(txtBrojSasije.getText());
         entitet.setVrstavozila((Vozilo.VrstaVozila) cmbVrstaVozila.getSelectedItem());
-        if (dpiGodinaProizvodnje.getDate() != null) {
-            entitet.setGodinaproizvodnje(Date.from(dpiGodinaProizvodnje.getDate().atStartOfDay()
+        if (dpiDatumProizvodnje.getDate() != null) {
+            entitet.setGodinaproizvodnje(Date.from(dpiDatumProizvodnje.getDate().atStartOfDay()
                     .atZone(ZoneId.systemDefault())
                     .toInstant()));
         }

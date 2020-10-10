@@ -118,7 +118,7 @@
                       <Component id="cmbKlijenti" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="cmbMarke" alignment="0" max="32767" attributes="0"/>
-                      <Component id="dpiGodinaProizvodnje" alignment="0" pref="210" max="32767" attributes="0"/>
+                      <Component id="dpiDatumProizvodnje" alignment="0" pref="210" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -142,7 +142,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="dpiGodinaProizvodnje" min="-2" max="-2" attributes="0"/>
+                  <Component id="dpiDatumProizvodnje" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -191,10 +191,10 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Godina proizvodnje"/>
+            <Property name="text" type="java.lang.String" value="Datum proizvodnje"/>
           </Properties>
         </Component>
-        <Component class="com.github.lgooddatepicker.components.DatePicker" name="dpiGodinaProizvodnje">
+        <Component class="com.github.lgooddatepicker.components.DatePicker" name="dpiDatumProizvodnje">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>

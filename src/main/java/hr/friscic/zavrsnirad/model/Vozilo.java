@@ -22,7 +22,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Vozilo extends Entitet {
 
-    private Date godinaproizvodnje;
+    private Date datumproizvodnje;
     private String boja;
     private String brojsasije;
 
@@ -69,11 +69,11 @@ public class Vozilo extends Entitet {
     }
 
     public Date getGodinaproizvodnje() {
-        return godinaproizvodnje;
+        return datumproizvodnje;
     }
 
     public void setGodinaproizvodnje(Date godinaproizvodnje) {
-        this.godinaproizvodnje = godinaproizvodnje;
+        this.datumproizvodnje = godinaproizvodnje;
     }
 
     public String getBoja() {
