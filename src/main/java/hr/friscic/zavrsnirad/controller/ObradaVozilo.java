@@ -24,7 +24,7 @@ public class ObradaVozilo extends Obrada<Vozilo> {
     protected void kontrolaCreate() throws Iznimka {
         kontrolaBoja();
         kontrolaBrojSasije();
-        kontrolaGodinaProizvodnje();
+        kontrolaDatumProizvodnje();
         kontrolaVrstaVozila();
     }
 
@@ -32,7 +32,7 @@ public class ObradaVozilo extends Obrada<Vozilo> {
     protected void kontrolaUpdate() throws Iznimka {
         kontrolaBoja();
         kontrolaBrojSasije();
-        kontrolaGodinaProizvodnje();
+        kontrolaDatumProizvodnje();
         kontrolaVrstaVozila();
     }
 
@@ -59,8 +59,8 @@ public class ObradaVozilo extends Obrada<Vozilo> {
 
     }
 
-    private void kontrolaGodinaProizvodnje() throws Iznimka {
-        if (entitet.getGodinaproizvodnje() == null) {
+    private void kontrolaDatumProizvodnje() throws Iznimka {
+        if (entitet.getDatumproizvodnje() == null) {
             throw new Iznimka("Potrebno je unijeti godinu proizvodnje vozila!");
         }
     }

@@ -68,11 +68,11 @@ public class Vozilo extends Entitet {
         this.marka = marka;
     }
 
-    public Date getGodinaproizvodnje() {
+    public Date getDatumproizvodnje() {
         return datumproizvodnje;
     }
 
-    public void setGodinaproizvodnje(Date godinaproizvodnje) {
+    public void setDatumproizvodnje(Date godinaproizvodnje) {
         this.datumproizvodnje = godinaproizvodnje;
     }
 

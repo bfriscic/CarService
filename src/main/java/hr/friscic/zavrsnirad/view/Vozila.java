@@ -310,7 +310,7 @@ public class Vozila extends javax.swing.JFrame {
             }
         }
 
-        dpiDatumProizvodnje.setDate(entitet.getGodinaproizvodnje().toInstant()
+        dpiDatumProizvodnje.setDate(entitet.getDatumproizvodnje().toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate());
 
@@ -353,7 +353,7 @@ public class Vozila extends javax.swing.JFrame {
         entitet.setBrojsasije(txtBrojSasije.getText());
         entitet.setVrstavozila((Vozilo.VrstaVozila) cmbVrstaVozila.getSelectedItem());
         if (dpiDatumProizvodnje.getDate() != null) {
-            entitet.setGodinaproizvodnje(Date.from(dpiDatumProizvodnje.getDate().atStartOfDay()
+            entitet.setDatumproizvodnje(Date.from(dpiDatumProizvodnje.getDate().atStartOfDay()
                     .atZone(ZoneId.systemDefault())
                     .toInstant()));
         }

@@ -26,11 +26,17 @@ public class ObradaServis extends Obrada<Servis> {
         kontrolaCijena();
         kontrolaNaziv();
         kontrolaOpis();
+        kontrolaTermin();
+        kontrolaOdraden();
     }
 
     @Override
     protected void kontrolaUpdate() throws Iznimka {
-
+        kontrolaCijena();
+        kontrolaNaziv();
+        kontrolaOpis();
+        kontrolaTermin();
+        kontrolaOdraden();
     }
 
     @Override
@@ -67,6 +73,18 @@ public class ObradaServis extends Obrada<Servis> {
         }
         if (entitet.getOpis().length() > 250) {
             throw new Iznimka("Opis servisa ne može biti duži od 250 znakova!");
+        }
+    }
+
+    private void kontrolaTermin() throws Iznimka {
+        if (entitet.getTermin() == null) {
+            throw new Iznimka("Potrebno je unijeti točan period početka servisa!");
+        }
+    }
+
+    private void kontrolaOdraden() throws Iznimka {
+        if (entitet.getOdrađen() == null) {
+            throw new Iznimka("Obavezan unos otkazivanja servisa: DA/NE?");
         }
     }
 

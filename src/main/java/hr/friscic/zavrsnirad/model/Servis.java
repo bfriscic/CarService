@@ -6,6 +6,7 @@
 package hr.friscic.zavrsnirad.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -21,12 +22,32 @@ public class Servis extends Entitet {
     private String naziv;
     private String opis;
     private BigDecimal cijena;
+    private Date termin;
+    private Boolean odrađen;
 
     @ManyToOne
     private Vozilo vozilo;
 
     @ManyToOne
     private Radnik radnik;
+
+    public Date getTermin() {
+        return termin;
+    }
+
+    public void setTermin(Date termin) {
+        this.termin = termin;
+    }
+
+    public Boolean getOdrađen() {
+        return odrađen;
+    }
+
+    public void setOdrađen(Boolean odrađen) {
+        this.odrađen = odrađen;
+    }
+    
+    
 
     public String getNaziv() {
         return naziv;

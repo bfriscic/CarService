@@ -10,7 +10,6 @@ import hr.friscic.zavrsnirad.model.Operater;
 import java.awt.event.KeyEvent;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,8 +26,7 @@ public class Autorizacija extends javax.swing.JFrame {
 
         txtEmail.requestFocus();
         txtEmail.setText("smv@smv.com");
-        
-        
+
     }
 
     /**

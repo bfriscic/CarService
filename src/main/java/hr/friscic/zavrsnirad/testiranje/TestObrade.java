@@ -77,7 +77,7 @@ public class TestObrade {
 
         w.setBoja("bijela");
         w.setBrojsasije("1FT7W2BT9CEA54193");
-        w.setGodinaproizvodnje(Date.from(Instant.MIN));
+        w.setDatumproizvodnje(Date.from(Instant.MIN));
 
         ObradaVozilo obradaW = new ObradaVozilo();
 
