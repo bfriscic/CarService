@@ -33,11 +33,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="btnDodaj" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="btnDodaj" linkSize="1" min="-2" pref="80" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnPromjeni" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnPromjeni" linkSize="1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnObrisi" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="btnObrisi" linkSize="1" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPanel1" max="32767" attributes="0"/>
                       </Group>
@@ -106,24 +106,29 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" max="32767" attributes="0"/>
-                      <Component id="txtNaziv" alignment="0" max="32767" attributes="0"/>
-                      <Component id="cmbRadnik" alignment="0" max="32767" attributes="0"/>
-                      <Component id="cmbVozilo" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtCijena" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtNaziv" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                       <Component id="dpiTermin" alignment="0" max="32767" attributes="0"/>
-                      <Component id="chbOdraden" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtCijena" alignment="0" max="32767" attributes="0"/>
+                      <Component id="cmbVozilo" alignment="0" max="32767" attributes="0"/>
+                      <Component id="cmbRadnik" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chbOdraden" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -153,9 +158,9 @@
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="cmbRadnik" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
                   <Component id="chbOdraden" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -246,6 +251,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnDodaj">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="E:\jp22\ZavrsniRad\src\main\resources\icons\iconfinder_plus_1646001 (1).png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Dodaj"/>
       </Properties>
       <Events>
@@ -254,6 +262,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnPromjeni">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="E:\jp22\ZavrsniRad\src\main\resources\icons\iconfinder_01_Pencil_2064476.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Promjeni"/>
       </Properties>
       <Events>
@@ -262,6 +273,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnObrisi">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="E:\jp22\ZavrsniRad\src\main\resources\icons\iconfinder_error_1646012.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Obri&#x161;i"/>
       </Properties>
       <Events>
