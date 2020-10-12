@@ -7,6 +7,8 @@ package hr.friscic.zavrsnirad;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import hr.friscic.zavrsnirad.view.Autorizacija;
+import hr.friscic.zavrsnirad.view.SplashScreen;
+import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 /**
@@ -23,7 +25,8 @@ public class Start {
             System.err.println("Greška prilikom pokretanja LaF-a!");
         }
 
-        new Autorizacija().setVisible(true);
+        new SplashScreen().setVisible(true);
+        JFrame.setDefaultLookAndFeelDecorated(true);
 
         //HibernateUtil.getSessionFactory().openSession();
         //PocetniInsert.izvedi();

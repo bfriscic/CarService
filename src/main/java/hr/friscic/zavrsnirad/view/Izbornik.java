@@ -29,7 +29,6 @@ public class Izbornik extends javax.swing.JFrame {
     public Izbornik() {
         initComponents();
         jmNaslovGrana.setText((Aplikacija.NASLOV_APP));
-        setTitle("SMV APP");
 
         jmiOperateri.setVisible(Aplikacija.isAdmin());
         jmiMarke.setVisible(Aplikacija.isAdmin());
@@ -133,7 +132,8 @@ public class Izbornik extends javax.swing.JFrame {
                     .addComponent(lblTwitter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblInstagram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
