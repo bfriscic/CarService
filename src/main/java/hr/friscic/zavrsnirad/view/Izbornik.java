@@ -82,7 +82,7 @@ public class Izbornik extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\K1R4\\Downloads\\peter-broomfield-m3m-lnR90uM-unsplash.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\jp22\\ZavrsniRad\\src\\main\\resources\\icons\\main window.jpg")); // NOI18N
 
         lblDateTime.setFont(new java.awt.Font("Russo One", 0, 14)); // NOI18N
 

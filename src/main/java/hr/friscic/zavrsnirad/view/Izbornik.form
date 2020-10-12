@@ -162,7 +162,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\K1R4\Downloads\peter-broomfield-m3m-lnR90uM-unsplash.jpg"/>
+              <Image iconType="2" name="E:\jp22\ZavrsniRad\src\main\resources\icons\main window.jpg"/>
             </Property>
           </Properties>
         </Component>
