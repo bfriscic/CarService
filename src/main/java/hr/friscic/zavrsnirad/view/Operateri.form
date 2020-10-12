@@ -122,8 +122,8 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="cmbUloga" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtLozinka" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtUloga" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel1" max="32767" attributes="0"/>
                                   <EmptySpace min="110" pref="110" max="-2" attributes="0"/>
@@ -173,7 +173,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtUloga" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="cmbUloga" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -229,14 +229,22 @@
             <Property name="text" type="java.lang.String" value="Uloga"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtUloga">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="text" type="java.lang.String" value="Lozinka"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtLozinka">
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbUloga">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

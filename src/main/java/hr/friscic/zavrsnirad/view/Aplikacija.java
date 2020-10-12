@@ -21,7 +21,7 @@ public class Aplikacija {
         if (operater == null || operater.getUloga() == null) {
             return false;
         }
-        return operater.getUloga().equals("Administrator");
+        return operater.getUloga().equals(Operater.Uloga.Administrator);
 
     }
 

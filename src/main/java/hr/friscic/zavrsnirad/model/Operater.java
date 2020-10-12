@@ -17,7 +17,14 @@ import javax.persistence.Enumerated;
 public class Operater extends Osoba {
 
     private String lozinka;
-    private String uloga;
+
+    @Enumerated(EnumType.STRING)
+    private Uloga uloga;
+
+    public static enum Uloga {
+        Operater,
+        Administrator
+    }
 
     public String getLozinka() {
         return lozinka;
@@ -27,11 +34,11 @@ public class Operater extends Osoba {
         this.lozinka = lozinka;
     }
 
-    public String getUloga() {
+    public Uloga getUloga() {
         return uloga;
     }
 
-    public void setUloga(String uloga) {
+    public void setUloga(Uloga uloga) {
         this.uloga = uloga;
     }
 

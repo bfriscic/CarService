@@ -323,6 +323,8 @@ public class Vozila extends javax.swing.JFrame {
         dpiDatumProizvodnje.setDate(entitet.getDatumproizvodnje().toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate());
+        
+        
 
 
     }//GEN-LAST:event_lstPodaciValueChanged

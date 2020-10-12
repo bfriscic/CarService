@@ -7,7 +7,9 @@ package hr.friscic.zavrsnirad.view;
 
 import hr.friscic.zavrsnirad.controller.ObradaOperater;
 import hr.friscic.zavrsnirad.model.Operater;
+import hr.friscic.zavrsnirad.model.Operater.Uloga;
 import hr.friscic.zavrsnirad.utility.Iznimka;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -28,6 +30,7 @@ public class Operateri extends javax.swing.JFrame {
         obrada = new ObradaOperater();
         setTitle("SMV APP - Operateri");
         ucitajPodatke();
+        cmbUloga.setModel(new DefaultComboBoxModel(Operater.Uloga.values()));
     }
 
     /**
@@ -51,9 +54,9 @@ public class Operateri extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtUloga = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtLozinka = new javax.swing.JTextField();
+        cmbUloga = new javax.swing.JComboBox<>();
         btnDodaj = new javax.swing.JButton();
         btnPromjeni = new javax.swing.JButton();
         btnObrisi = new javax.swing.JButton();
@@ -122,8 +125,8 @@ public class Operateri extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cmbUloga, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtLozinka, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUloga, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(110, 110, 110))
@@ -164,7 +167,7 @@ public class Operateri extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUloga, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbUloga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -259,7 +262,7 @@ public class Operateri extends javax.swing.JFrame {
         txtPrezime.setText(entitet.getPrezime());
         txtOib.setText(entitet.getOib());
         txtEmail.setText(entitet.getEmail());
-        txtUloga.setText(entitet.getUloga());
+        cmbUloga.setSelectedItem(entitet.getUloga());
         txtLozinka.setText(entitet.getLozinka());
         
 
@@ -340,6 +343,7 @@ public class Operateri extends javax.swing.JFrame {
     private javax.swing.JButton btnDodaj;
     private javax.swing.JButton btnObrisi;
     private javax.swing.JButton btnPromjeni;
+    private javax.swing.JComboBox<String> cmbUloga;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -355,7 +359,6 @@ public class Operateri extends javax.swing.JFrame {
     private javax.swing.JTextField txtLozinka;
     private javax.swing.JTextField txtOib;
     private javax.swing.JTextField txtPrezime;
-    private javax.swing.JTextField txtUloga;
     // End of variables declaration//GEN-END:variables
 
     private void ucitajPodatke() {
@@ -371,7 +374,7 @@ public class Operateri extends javax.swing.JFrame {
         txtPrezime.setText("");
         txtOib.setText("");
         txtEmail.setText("");
-        txtUloga.setText("");
+       // cmbUloga.setSelectedItem(ABORT);
         txtLozinka.setText("");
         
     }
@@ -381,7 +384,7 @@ public class Operateri extends javax.swing.JFrame {
         entitet.setPrezime(txtPrezime.getText());
         entitet.setOib(txtOib.getText());
         entitet.setEmail(txtEmail.getText());
-        entitet.setUloga(txtUloga.getText());
+        entitet.setUloga((Uloga) cmbUloga.getSelectedItem());
         entitet.setLozinka(BCrypt.hashpw(txtLozinka.getText(), BCrypt.gensalt()));
         
         obrada.setEntitet(entitet);
