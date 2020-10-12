@@ -78,6 +78,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(640, 426));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 

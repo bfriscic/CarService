@@ -8,6 +8,8 @@ package hr.friscic.zavrsnirad.controller;
 import hr.friscic.zavrsnirad.model.Osoba;
 import hr.friscic.zavrsnirad.utility.Iznimka;
 import hr.friscic.zavrsnirad.utility.Oib;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 
 /**
  *
@@ -70,7 +72,13 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
             throw new Iznimka("Email ne smije biti prazan!");
         }
         if (entitet.getEmail().length() >= 50) {
-            throw new Iznimka("Email nije valjan!");
+            throw new Iznimka("Email je predugačak!");
+        }
+        try {
+            InternetAddress emailAddr = new InternetAddress(entitet.getEmail());
+            emailAddr.validate();
+        } catch (Exception e) {
+            throw new Iznimka("Email nije u ispravnom formatu!");
         }
 
     }

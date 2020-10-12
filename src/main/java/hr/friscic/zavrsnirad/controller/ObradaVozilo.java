@@ -26,6 +26,9 @@ public class ObradaVozilo extends Obrada<Vozilo> {
         kontrolaBrojSasije();
         kontrolaDatumProizvodnje();
         kontrolaVrstaVozila();
+        kontrolaKlijentOdabran();
+        kontrolaMarkaOdabran();
+        kontrolaVrstaVozilaOdabran();
     }
 
     @Override
@@ -70,6 +73,23 @@ public class ObradaVozilo extends Obrada<Vozilo> {
             throw new Iznimka("Vrstu vozila je potrebno odabrati!");
         }
 
+    }
+    private void kontrolaVrstaVozilaOdabran() throws Iznimka {
+        if (entitet.getVrstavozila()== null) {
+            throw new Iznimka("Potrebno je odabrati vrstu vozila iz padajućeg izbornika!");
+        }
+    }
+    
+    private void kontrolaKlijentOdabran() throws Iznimka {
+        if (entitet.getKlijent() == null) {
+            throw new Iznimka("Potrebno je odabrati klijenta iz padajućeg izbornika!");
+        }
+    }
+    
+    private void kontrolaMarkaOdabran() throws Iznimka {
+        if (entitet.getMarka()== null) {
+            throw new Iznimka("Potrebno je odabrati marku iz padajućeg izbornika!");
+        }
     }
 
 }

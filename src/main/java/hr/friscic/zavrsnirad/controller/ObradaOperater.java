@@ -36,6 +36,7 @@ public class ObradaOperater extends ObradaOsoba<Operater> {
         kontrolaUloga();
         kontrolaOibBazaKreiraj();
         kontrolaLozinka();
+        kontrolaUlogaOdabran();
 
     }
 
@@ -93,6 +94,12 @@ public class ObradaOperater extends ObradaOsoba<Operater> {
             throw new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
         }
 
+    }
+
+    private void kontrolaUlogaOdabran() throws Iznimka {
+        if (entitet.getUloga() == null) {
+            throw new Iznimka("Potrebno je odabrati ulogu iz padajućeg izbornika!");
+        }
     }
 
 }

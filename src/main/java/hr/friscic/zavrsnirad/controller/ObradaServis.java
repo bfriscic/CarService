@@ -28,6 +28,8 @@ public class ObradaServis extends Obrada<Servis> {
         kontrolaOpis();
         kontrolaTermin();
         kontrolaOdraden();
+        kontrolaVoziloOdabran();
+        kontrolaRadnikOdabran();
     }
 
     @Override
@@ -85,6 +87,19 @@ public class ObradaServis extends Obrada<Servis> {
     private void kontrolaOdraden() throws Iznimka {
         if (entitet.getOdrađen() == null) {
             throw new Iznimka("Obavezan unos otkazivanja servisa: DA/NE?");
+        }
+    }
+
+    private void kontrolaVoziloOdabran() throws Iznimka {
+        if (entitet.getVozilo() == null) {
+            throw new Iznimka("Potrebno je odabrati vozilo iz padajućeg izbornika!");
+        }
+
+    }
+
+    private void kontrolaRadnikOdabran() throws Iznimka {
+        if (entitet.getRadnik() == null) {
+            throw new Iznimka("Potrebno je odabrati radnika iz padajućeg izbornika!");
         }
     }
 
