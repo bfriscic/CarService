@@ -12,6 +12,7 @@ import hr.friscic.zavrsnirad.controller.ObradaVozilo;
 import hr.friscic.zavrsnirad.model.Klijent;
 import hr.friscic.zavrsnirad.model.Marka;
 import hr.friscic.zavrsnirad.model.Vozilo;
+import hr.friscic.zavrsnirad.model.Vozilo.VrstaVozila;
 import hr.friscic.zavrsnirad.utility.Iznimka;
 import java.time.ZoneId;
 import java.util.Date;
@@ -24,7 +25,7 @@ import javax.swing.DefaultListModel;
  * @author K1R4
  */
 public class Vozila extends javax.swing.JFrame {
-
+    
     private ObradaVozilo obrada;
     private Vozilo entitet;
 
@@ -37,22 +38,26 @@ public class Vozila extends javax.swing.JFrame {
         setTitle("SMV APP - Vozila");
         ucitajPodatke();
         cmbVrstaVozila.setModel(new DefaultComboBoxModel(Vozilo.VrstaVozila.values()));
-
+        
         DefaultComboBoxModel<Klijent> mk = new DefaultComboBoxModel<>();
         new ObradaKlijent().getPodaci().forEach(k -> {
             mk.addElement(k);
         });
         cmbKlijenti.setModel(mk);
-
+        
         DefaultComboBoxModel<Marka> mm = new DefaultComboBoxModel<>();
         new ObradaMarka().getPodaci().forEach(m -> {
             mm.addElement(m);
         });
         cmbMarke.setModel(mm);
-
+        
         DatePickerSettings dps = new DatePickerSettings(new Locale("hr", "HR"));
         dps.setFormatForDatesBeforeCommonEra("dd.MM.yyyy");
         dpiDatumProizvodnje.setSettings(dps);
+        
+        cmbVrstaVozila.setSelectedIndex(-1);
+        cmbKlijenti.setSelectedIndex(-1);
+        cmbMarke.setSelectedIndex(-1);
     }
 
     /**
@@ -239,12 +244,12 @@ public class Vozila extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDodajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajActionPerformed
-
+        
         lblPoruka.setText("");
         entitet = new Vozilo();
-
+        
         postaviVrijednostiUEntitet();
-
+        
         obrada.setEntitet(entitet);
         try {
             obrada.create();
@@ -261,7 +266,7 @@ public class Vozila extends javax.swing.JFrame {
             return;
         }
         postaviVrijednostiUEntitet();
-
+        
         try {
             obrada.update();
             ucitajPodatke();
@@ -276,9 +281,9 @@ public class Vozila extends javax.swing.JFrame {
         if (entitet == null) {
             return;
         }
-
+        
         obrada.setEntitet(entitet);
-
+        
         try {
             obrada.delete();
             ucitajPodatke();
@@ -296,14 +301,15 @@ public class Vozila extends javax.swing.JFrame {
         if (evt.getValueIsAdjusting()) {
             return;
         }
-
+        
         entitet = lstPodaci.getSelectedValue();
         if (entitet == null) {
             return;
         }
-
+        
         txtBoja.setText(entitet.getBoja());
         txtBrojSasije.setText(entitet.getBrojsasije());
+        cmbVrstaVozila.setSelectedItem(entitet.getVrstavozila());
         DefaultComboBoxModel<Klijent> mk = (DefaultComboBoxModel<Klijent>) cmbKlijenti.getModel();
         for (int i = 0; i < mk.getSize(); i++) {
             if (mk.getElementAt(i).getId().equals(entitet.getKlijent().getId())) {
@@ -311,7 +317,7 @@ public class Vozila extends javax.swing.JFrame {
                 break;
             }
         }
-
+        
         DefaultComboBoxModel<Marka> mm = (DefaultComboBoxModel<Marka>) cmbMarke.getModel();
         for (int i = 0; i < mm.getSize(); i++) {
             if (mm.getElementAt(i).getId().equals(entitet.getMarka().getId())) {
@@ -319,22 +325,20 @@ public class Vozila extends javax.swing.JFrame {
                 break;
             }
         }
-
+        
         dpiDatumProizvodnje.setDate(entitet.getDatumproizvodnje().toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate());
         
-        
-
 
     }//GEN-LAST:event_lstPodaciValueChanged
-
+    
     private void ucitajPodatke() {
         DefaultListModel<Vozilo> m = new DefaultListModel<>();
         obrada.getPodaci().forEach(k -> m.addElement(k));
-
+        
         lstPodaci.setModel(m);
-
+        
     }
 
 
@@ -373,5 +377,5 @@ public class Vozila extends javax.swing.JFrame {
         entitet.setMarka((Marka) cmbMarke.getSelectedItem());
         obrada.setEntitet(entitet);
     }
-
+    
 }

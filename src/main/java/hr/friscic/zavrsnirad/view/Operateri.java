@@ -31,6 +31,8 @@ public class Operateri extends javax.swing.JFrame {
         setTitle("SMV APP - Operateri");
         ucitajPodatke();
         cmbUloga.setModel(new DefaultComboBoxModel(Operater.Uloga.values()));
+        cmbUloga.setSelectedIndex(-1);
+        
     }
 
     /**
@@ -374,7 +376,6 @@ public class Operateri extends javax.swing.JFrame {
         txtPrezime.setText("");
         txtOib.setText("");
         txtEmail.setText("");
-       // cmbUloga.setSelectedItem(ABORT);
         txtLozinka.setText("");
         
     }

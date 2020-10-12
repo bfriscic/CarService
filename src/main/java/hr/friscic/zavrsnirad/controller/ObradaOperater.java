@@ -34,6 +34,7 @@ public class ObradaOperater extends ObradaOsoba<Operater> {
     protected void kontrolaCreate() throws Iznimka {
         super.kontrolaCreate();
         kontrolaUloga();
+        kontrolaOibBazaKreiraj();
         kontrolaLozinka();
 
     }
@@ -41,6 +42,7 @@ public class ObradaOperater extends ObradaOsoba<Operater> {
     @Override
     protected void kontrolaUpdate() throws Iznimka {
         super.kontrolaUpdate();
+        kontrolaOibBazaPromjeni();
     }
 
     @Override
@@ -64,6 +66,33 @@ public class ObradaOperater extends ObradaOsoba<Operater> {
         if (entitet.getLozinka().isEmpty() || entitet.getLozinka() == null) {
             throw new Iznimka("Lozinka je obavezna, ne može biti prazna!");
         }
+    }
+
+    private void kontrolaOibBazaKreiraj() throws Iznimka {
+        List<Operater> lista = session.createQuery(""
+                + " from Operater o "
+                + " where o.oib=:oib "
+        )
+                .setParameter("oib", entitet.getOib())
+                .list();
+        if (lista.size() > 0) {
+            throw new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
+        }
+
+    }
+
+    private void kontrolaOibBazaPromjeni() throws Iznimka {
+        List<Operater> lista = session.createQuery(""
+                + " from Operater o "
+                + " where o.oib=:oib and o.id!=:id"
+        )
+                .setParameter("oib", entitet.getOib())
+                .setParameter("id", entitet.getId())
+                .list();
+        if (lista.size() > 0) {
+            throw new Iznimka("Oib je dodjeljen " + lista.get(0).getImePrezime() + ", unesite drugi OIB!");
+        }
+
     }
 
 }
