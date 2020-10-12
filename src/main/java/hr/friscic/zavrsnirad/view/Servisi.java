@@ -5,14 +5,10 @@
  */
 package hr.friscic.zavrsnirad.view;
 
-import com.github.lgooddatepicker.components.DatePickerSettings;
-import hr.friscic.zavrsnirad.controller.ObradaKlijent;
-import hr.friscic.zavrsnirad.controller.ObradaMarka;
+import com.google.gson.Gson;
 import hr.friscic.zavrsnirad.controller.ObradaRadnik;
 import hr.friscic.zavrsnirad.controller.ObradaServis;
 import hr.friscic.zavrsnirad.controller.ObradaVozilo;
-import hr.friscic.zavrsnirad.model.Klijent;
-import hr.friscic.zavrsnirad.model.Marka;
 import hr.friscic.zavrsnirad.model.Radnik;
 import hr.friscic.zavrsnirad.model.Servis;
 import hr.friscic.zavrsnirad.model.Vozilo;
@@ -20,7 +16,6 @@ import hr.friscic.zavrsnirad.utility.Iznimka;
 import java.math.BigDecimal;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.Locale;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 
@@ -29,7 +24,7 @@ import javax.swing.DefaultListModel;
  * @author K1R4
  */
 public class Servisi extends javax.swing.JFrame {
-
+    
     private ObradaServis obrada;
     private Servis entitet;
 
@@ -41,19 +36,22 @@ public class Servisi extends javax.swing.JFrame {
         obrada = new ObradaServis();
         setTitle("SMV APP - Servisi");
         ucitajPodatke();
-
+        
         DefaultComboBoxModel<Vozilo> mv = new DefaultComboBoxModel<>();
         new ObradaVozilo().getPodaci().forEach(v -> {
             mv.addElement(v);
         });
         cmbVozilo.setModel(mv);
-
+        
         DefaultComboBoxModel<Radnik> mr = new DefaultComboBoxModel<>();
         new ObradaRadnik().getPodaci().forEach(r -> {
             mr.addElement(r);
         });
         cmbRadnik.setModel(mr);
-
+        
+        cmbRadnik.setSelectedIndex(-1);
+        cmbVozilo.setSelectedIndex(-1);
+        
     }
 
     /**
@@ -86,6 +84,7 @@ public class Servisi extends javax.swing.JFrame {
         btnDodaj = new javax.swing.JButton();
         btnPromjeni = new javax.swing.JButton();
         btnObrisi = new javax.swing.JButton();
+        btnExportJson = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -178,6 +177,8 @@ public class Servisi extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        lblPoruka.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
         btnDodaj.setIcon(new javax.swing.ImageIcon("E:\\jp22\\ZavrsniRad\\src\\main\\resources\\icons\\iconfinder_plus_1646001 (1).png")); // NOI18N
         btnDodaj.setText("Dodaj");
         btnDodaj.addActionListener(new java.awt.event.ActionListener() {
@@ -202,6 +203,14 @@ public class Servisi extends javax.swing.JFrame {
             }
         });
 
+        btnExportJson.setIcon(new javax.swing.ImageIcon("E:\\jp22\\ZavrsniRad\\src\\main\\resources\\icons\\iconfinder_file_3131963.png")); // NOI18N
+        btnExportJson.setText("JSON");
+        btnExportJson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportJsonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -209,7 +218,10 @@ public class Servisi extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExportJson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -221,7 +233,7 @@ public class Servisi extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnObrisi, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -241,7 +253,9 @@ public class Servisi extends javax.swing.JFrame {
                             .addComponent(btnObrisi)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExportJson))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -250,12 +264,12 @@ public class Servisi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDodajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajActionPerformed
-
+        
         lblPoruka.setText("");
         entitet = new Servis();
-
+        
         postaviVrijednostiUEntitet();
-
+        
         obrada.setEntitet(entitet);
         try {
             obrada.create();
@@ -272,7 +286,7 @@ public class Servisi extends javax.swing.JFrame {
             return;
         }
         postaviVrijednostiUEntitet();
-
+        
         try {
             obrada.update();
             ucitajPodatke();
@@ -287,9 +301,9 @@ public class Servisi extends javax.swing.JFrame {
         if (entitet == null) {
             return;
         }
-
+        
         obrada.setEntitet(entitet);
-
+        
         try {
             obrada.delete();
             ucitajPodatke();
@@ -303,20 +317,20 @@ public class Servisi extends javax.swing.JFrame {
         if (evt.getValueIsAdjusting()) {
             return;
         }
-
+        
         entitet = lstPodaci.getSelectedValue();
         if (entitet == null) {
             return;
         }
-
+        
         txtNaziv.setText(entitet.getNaziv());
         txtOpis.setText(entitet.getOpis());
         txtCijena.setText(entitet.getCijena().toString());
-
+        
         if (null != entitet.getTermin()) {
             dpiTermin.setDateTimePermissive(entitet.getTermin().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
         }
-
+        
         DefaultComboBoxModel<Vozilo> mv = (DefaultComboBoxModel<Vozilo>) cmbVozilo.getModel();
         for (int i = 0; i < mv.getSize(); i++) {
             if (mv.getElementAt(i).getId().equals(entitet.getVozilo().getId())) {
@@ -324,7 +338,7 @@ public class Servisi extends javax.swing.JFrame {
                 break;
             }
         }
-
+        
         DefaultComboBoxModel<Radnik> mm = (DefaultComboBoxModel<Radnik>) cmbRadnik.getModel();
         for (int i = 0; i < mm.getSize(); i++) {
             if (mm.getElementAt(i).getId().equals(entitet.getRadnik().getId())) {
@@ -333,7 +347,7 @@ public class Servisi extends javax.swing.JFrame {
             }
         }
         chbOdraden.setSelected(entitet.getOdrađen());
-
+        
 
     }//GEN-LAST:event_lstPodaciValueChanged
 
@@ -341,17 +355,25 @@ public class Servisi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chbOdradenActionPerformed
 
+    private void btnExportJsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportJsonActionPerformed
+       
+        Gson gson = new Gson();
+        //System.out.println(gson.toJson(obrada.getPodaci()));
+        
+    }//GEN-LAST:event_btnExportJsonActionPerformed
+    
     private void ucitajPodatke() {
         DefaultListModel<Servis> m = new DefaultListModel<>();
         obrada.getPodaci().forEach(s -> m.addElement(s));
-
+        
         lstPodaci.setModel(m);
-
+        
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDodaj;
+    private javax.swing.JButton btnExportJson;
     private javax.swing.JButton btnObrisi;
     private javax.swing.JButton btnPromjeni;
     private javax.swing.JCheckBox chbOdraden;
@@ -385,11 +407,11 @@ public class Servisi extends javax.swing.JFrame {
         if (dpiTermin.getDateTimePermissive() != null) {
             entitet.setTermin(Date.from(dpiTermin.getDateTimePermissive().atZone(ZoneId.systemDefault()).toInstant()));
         }
-
+        
         entitet.setVozilo((Vozilo) cmbVozilo.getSelectedItem());
         entitet.setRadnik((Radnik) cmbRadnik.getSelectedItem());
         entitet.setOdrađen(chbOdraden.isSelected());
         obrada.setEntitet(entitet);
     }
-
+    
 }

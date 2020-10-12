@@ -134,6 +134,8 @@ public class Marke extends javax.swing.JFrame {
             }
         });
 
+        lblPoruka.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

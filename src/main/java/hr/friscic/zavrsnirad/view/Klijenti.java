@@ -184,6 +184,8 @@ public class Klijenti extends javax.swing.JFrame {
             }
         });
 
+        lblPoruka.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
         txtUvjet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUvjetActionPerformed(evt);
