@@ -119,8 +119,8 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="pswLozinka" alignment="0" max="32767" attributes="0"/>
                               <Component id="cmbUloga" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtLozinka" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel1" max="32767" attributes="0"/>
                                   <EmptySpace min="110" pref="110" max="-2" attributes="0"/>
@@ -174,7 +174,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtLozinka" min="-2" max="-2" attributes="0"/>
+                  <Component id="pswLozinka" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -231,8 +231,6 @@
             <Property name="text" type="java.lang.String" value="Lozinka"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtLozinka">
-        </Component>
         <Component class="javax.swing.JComboBox" name="cmbUloga">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -242,6 +240,8 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="pswLozinka">
         </Component>
       </SubComponents>
     </Container>
