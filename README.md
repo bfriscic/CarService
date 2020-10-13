@@ -1,6 +1,6 @@
 ## Uvod
 
-SMV APP je Java desktop aplikacija koja služi za evidenciju klijenata, njihovih vozila, radnika i servisa koji se obavljaju na određenim vozilima. Korisničko sučelje aplikacije izrađeno je u Swing okruženju, dok se podaci pohranjunu u MariaDB bazu podataka.
+SMV APP je Java desktop aplikacija koja služi za evidenciju klijenata, njihovih vozila, radnika i servisa koji se obavljaju na određenim vozilima. Korisničko sučelje aplikacije izrađeno je u Swing okruženju, dok se podaci pohranjunu u MariaDB bazu podataka zahvaljujući Hibernate ORMu.
 
 ## Korišteni alati
 
@@ -8,6 +8,7 @@ SMV APP je Java desktop aplikacija koja služi za evidenciju klijenata, njihovih
 * [MariaDB](https://mariadb.org/)
 * [Apache Netbeans IDE](http://netbeans.apache.org/)
 * [Hibernate ORM](http://hibernate.org/orm/)
+* [XAMPP](https://www.apachefriends.org/index.html)
 * [Gson](https://github.com/google/gson)
 * [DBeaver](https://dbeaver.io/)
 * [Java Faker](https://github.com/DiUS/java-faker)
