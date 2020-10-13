@@ -20,7 +20,7 @@ import javax.swing.Timer;
  * @author K1R4
  */
 public class Izbornik extends javax.swing.JFrame {
-
+    
     Timer timer;
 
     /**
@@ -29,12 +29,13 @@ public class Izbornik extends javax.swing.JFrame {
     public Izbornik() {
         initComponents();
         jmNaslovGrana.setText((Aplikacija.NASLOV_APP));
-
+        
         jmiOperateri.setVisible(Aplikacija.isAdmin());
         jmiMarke.setVisible(Aplikacija.isAdmin());
-
+        jmiRadnici.setVisible(Aplikacija.isAdmin());
+        
         ActionListener actionListener = new ActionListener() {
-
+            
             @Override
             public void actionPerformed(ActionEvent e) {
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
@@ -42,11 +43,11 @@ public class Izbornik extends javax.swing.JFrame {
                 lblDateTime.setText(dtf.format(now));
             }
         };
-
+        
         timer = new Timer(1000, actionListener);
         timer.setInitialDelay(0);
         timer.start();
-
+        
     }
 
     /**
