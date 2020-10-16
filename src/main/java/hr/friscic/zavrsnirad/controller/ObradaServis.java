@@ -85,7 +85,7 @@ public class ObradaServis extends Obrada<Servis> {
     }
 
     private void kontrolaOdraden() throws Iznimka {
-        if (entitet.getOdrađen() == null) {
+        if (entitet.getOdraden() == null) {
             throw new Iznimka("Obavezan unos otkazivanja servisa: DA/NE?");
         }
     }

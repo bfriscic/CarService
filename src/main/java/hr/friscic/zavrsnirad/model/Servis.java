@@ -23,7 +23,7 @@ public class Servis extends Entitet {
     private String opis;
     private BigDecimal cijena;
     private Date termin;
-    private Boolean odrađen;
+    private Boolean odraden;
 
     @ManyToOne
     private Vozilo vozilo;
@@ -39,12 +39,12 @@ public class Servis extends Entitet {
         this.termin = termin;
     }
 
-    public Boolean getOdrađen() {
-        return odrađen;
+    public Boolean getOdraden() {
+        return odraden;
     }
 
-    public void setOdrađen(Boolean odrađen) {
-        this.odrađen = odrađen;
+    public void setOdraden(Boolean odraden) {
+        this.odraden = odraden;
     }
     
     

@@ -5,6 +5,7 @@
  */
 package hr.friscic.zavrsnirad.view;
 
+import com.github.lgooddatepicker.components.DatePickerSettings;
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
@@ -25,6 +26,7 @@ import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Locale;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
@@ -63,6 +65,10 @@ public class Servisi extends javax.swing.JFrame {
         cmbRadnik.setSelectedIndex(-1);
         cmbVozilo.setSelectedIndex(-1);
 
+        DatePickerSettings dps = new DatePickerSettings(new Locale("hr", "HR"));
+        dps.setFormatForDatesBeforeCommonEra("dd.MM.yyyy");
+        dpiTermin.datePicker.setSettings(dps);
+
     }
 
     /**
@@ -100,6 +106,7 @@ public class Servisi extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
+        lstPodaci.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista svih servisa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
         lstPodaci.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 lstPodaciValueChanged(evt);
@@ -107,7 +114,7 @@ public class Servisi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstPodaci);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Podaci o servisu"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Podaci o servisu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
         jLabel1.setText("Naziv");
 
@@ -140,7 +147,7 @@ public class Servisi extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtNaziv)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                     .addComponent(dpiTermin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtCijena)
                     .addComponent(cmbVozilo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -232,7 +239,7 @@ public class Servisi extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -244,9 +251,9 @@ public class Servisi extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(btnObrisi, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(btnExportJson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(btnExportJson, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -359,7 +366,7 @@ public class Servisi extends javax.swing.JFrame {
                 break;
             }
         }
-        chbOdraden.setSelected(entitet.getOdrađen());
+        chbOdraden.setSelected(entitet.getOdraden());
 
 
     }//GEN-LAST:event_lstPodaciValueChanged
@@ -469,7 +476,7 @@ public class Servisi extends javax.swing.JFrame {
 
         entitet.setVozilo((Vozilo) cmbVozilo.getSelectedItem());
         entitet.setRadnik((Radnik) cmbRadnik.getSelectedItem());
-        entitet.setOdrađen(chbOdraden.isSelected());
+        entitet.setOdraden(chbOdraden.isSelected());
         obrada.setEntitet(entitet);
     }
 

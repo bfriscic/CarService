@@ -410,7 +410,7 @@ public class Klijenti extends javax.swing.JFrame {
         entitet.setPrezime(txtPrezime.getText());
         entitet.setOib(txtOib.getText());
         entitet.setEmail(txtEmail.getText());
-        entitet.setKontaktbroj(txtKontaktBroj.getText());
+        entitet.setKontaktbroj(txtKontaktBroj.getText().trim());
 
         obrada.setEntitet(entitet);
     }
