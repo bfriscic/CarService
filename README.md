@@ -13,6 +13,7 @@ SMV APP je Java desktop aplikacija koja služi za evidenciju klijenata, njihovih
 * [DBeaver](https://dbeaver.io/)
 * [Java Faker](https://github.com/DiUS/java-faker)
 * [LGoodDatePicker](https://github.com/LGoodDatePicker/LGoodDatePicker)
+* [VIN validator](https://gist.github.com/ubergesundheit/5626679)
 
 ## Sažetak
 
