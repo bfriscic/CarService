@@ -51,6 +51,9 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
         if (entitet.getKontaktbroj().length()> 14) {
             throw new Iznimka("Kontakt broj nije valjan!");
         }
+        if (entitet.getKontaktbroj().length()< 9) {
+            throw new Iznimka("Kontakt broj nije valjan!");
+        }
     }
 
     @Override

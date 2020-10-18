@@ -7,6 +7,7 @@ package hr.friscic.zavrsnirad.controller;
 
 import hr.friscic.zavrsnirad.model.Vozilo;
 import hr.friscic.zavrsnirad.utility.Iznimka;
+import hr.friscic.zavrsnirad.utility.Vin;
 import java.util.List;
 
 /**
@@ -37,6 +38,9 @@ public class ObradaVozilo extends Obrada<Vozilo> {
         kontrolaBrojSasije();
         kontrolaDatumProizvodnje();
         kontrolaVrstaVozila();
+        kontrolaKlijentOdabran();
+        kontrolaMarkaOdabran();
+        kontrolaVrstaVozilaOdabran();
     }
 
     @Override
@@ -56,8 +60,10 @@ public class ObradaVozilo extends Obrada<Vozilo> {
     }
 
     private void kontrolaBrojSasije() throws Iznimka {
-        if (entitet.getBrojsasije() == null || entitet.getBrojsasije().isEmpty()) {
+        if (entitet.getBrojsasije() == null) {
             throw new Iznimka("Potrebno je unijeti broj šasije!");
+        } else if (!Vin.isVinValid(entitet.getBrojsasije())) {
+            throw new Iznimka("Neispravan broj šasije!");
         }
 
     }
@@ -74,20 +80,21 @@ public class ObradaVozilo extends Obrada<Vozilo> {
         }
 
     }
+
     private void kontrolaVrstaVozilaOdabran() throws Iznimka {
-        if (entitet.getVrstavozila()== null) {
+        if (entitet.getVrstavozila() == null) {
             throw new Iznimka("Potrebno je odabrati vrstu vozila iz padajućeg izbornika!");
         }
     }
-    
+
     private void kontrolaKlijentOdabran() throws Iznimka {
         if (entitet.getKlijent() == null) {
             throw new Iznimka("Potrebno je odabrati klijenta iz padajućeg izbornika!");
         }
     }
-    
+
     private void kontrolaMarkaOdabran() throws Iznimka {
-        if (entitet.getMarka()== null) {
+        if (entitet.getMarka() == null) {
             throw new Iznimka("Potrebno je odabrati marku iz padajućeg izbornika!");
         }
     }

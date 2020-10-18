@@ -43,6 +43,9 @@ public class ObradaRadnik extends ObradaOsoba<Radnik> {
         if (entitet.getBrojugovora().isEmpty()) {
             throw new Iznimka("Broj ugovora ne smije biti prazan!");
         }
+        if (entitet.getBrojugovora().length() > 25) {
+            throw new Iznimka("Neispravan broj ugovora");
+        }
 
     }
 

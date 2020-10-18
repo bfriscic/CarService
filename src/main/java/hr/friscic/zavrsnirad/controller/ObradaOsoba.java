@@ -60,6 +60,7 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
 
     protected void kontrolaOib() throws Iznimka {
         if (entitet.getOib() == null) {
+            throw new Iznimka ("OIB ne može biti prazan!");
 
         } else if (!Oib.provjeraOib(entitet.getOib())) {
             throw new Iznimka("Neispravan unos OIB-a!");
