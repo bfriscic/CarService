@@ -99,13 +99,13 @@ public class Vozila extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstPodaci);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Podaci o vozilu"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Podaci o vozilu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
         jLabel1.setText("Boja");
 
-        jLabel2.setText("Broj Šasije");
+        jLabel2.setText("Broj šasije");
 
-        jLabel3.setText("Vrsta Vozila");
+        jLabel3.setText("Vrsta vozila");
 
         cmbVrstaVozila.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

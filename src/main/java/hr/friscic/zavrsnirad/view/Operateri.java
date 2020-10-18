@@ -74,7 +74,7 @@ public class Operateri extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstPodaci);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Podaci o operateru"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Podaci o operateru", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
         jLabel1.setText("Ime");
 

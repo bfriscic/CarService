@@ -61,7 +61,7 @@ public class Marke extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstPodaci);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Marke vozila"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Marke vozila", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
         jLabel1.setText("Naziv");
 

@@ -97,7 +97,9 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Podaci o vozilu"/>
+            <TitledBorder title="Podaci o vozilu">
+              <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
+            </TitledBorder>
           </Border>
         </Property>
       </Properties>
@@ -172,14 +174,14 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Broj &#x160;asije"/>
+            <Property name="text" type="java.lang.String" value="Broj &#x161;asije"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtBrojSasije">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Vrsta Vozila"/>
+            <Property name="text" type="java.lang.String" value="Vrsta vozila"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbVrstaVozila">
