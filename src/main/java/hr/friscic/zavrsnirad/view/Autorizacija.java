@@ -23,6 +23,7 @@ public class Autorizacija extends javax.swing.JFrame {
      */
     public Autorizacija() {
         initComponents();
+        setTitle("SMV APP-Autorizacija");
 
         txtEmail.requestFocus();
         txtEmail.setText("smv@smv.com");

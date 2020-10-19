@@ -6,7 +6,6 @@
 package hr.friscic.zavrsnirad;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import hr.friscic.zavrsnirad.view.Autorizacija;
 import hr.friscic.zavrsnirad.view.SplashScreen;
 import javax.swing.JFrame;
 import javax.swing.UIManager;

@@ -91,7 +91,7 @@ public class Servis extends Entitet {
 
     @Override
     public String toString() {
-        return getNaziv() + " " + getVozilo();
+        return "[" + getNaziv()+ "]" + " " + getVozilo();
     }
     
     
