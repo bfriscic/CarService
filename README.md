@@ -23,6 +23,8 @@ Aplikacija se sastoji od glavnog prozora unutar kojeg postoji glavni izbornik (j
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Prijava%20admin.PNG" />
 </p>
 
+Nakon uspješne prijave u aplikaciju otvara se početni zaslon. Na početnom zaslonu nalazi se "Glavni izbornik" jMenu komponenta pomoću koje je moguće navigirati unutar aplikacije i otvarati pojedine prozore. Prikaz glavnog izbornika ovisi o ulozi odnosno koristili li aplikaciju administrator ili operater.
+
 <p align="left">
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Admin%20view.PNG" />
 </p>
@@ -68,4 +70,6 @@ Aplikacija se sastoji od glavnog prozora unutar kojeg postoji glavni izbornik (j
 </p>
 
 * Posljednja opcija u glavnom izborniku je "Izlaz" pomoću koje se zatvara aplikacija.
+
+Aplikacija pruža osnovne funkcije CRUD-a te postoji niz mogućnosti koje bi poboljšale rad aplikacije i omogućile bolju preglednost. Npr. unutar prozora "Servisi" moguće je postaviti dodatnu listu sa ispisom servisa koji su u tijeku i implementirati mogućnost ispisa računa. Ovo je samo jedan od primjera, no daljnji razvoj aplikacije planiram izvesti u obliku web aplikacije. :leaves:
 
