@@ -294,6 +294,7 @@ public class Servisi extends javax.swing.JFrame {
         try {
             obrada.create();
             ucitajPodatke();
+            ocistiPolja();
         } catch (Iznimka ex) {
             lblPoruka.setText(ex.getPoruka());
         }
@@ -310,6 +311,7 @@ public class Servisi extends javax.swing.JFrame {
         try {
             obrada.update();
             ucitajPodatke();
+            ocistiPolja();
         } catch (Iznimka e) {
             lblPoruka.setText(e.getPoruka());
         }
@@ -327,6 +329,7 @@ public class Servisi extends javax.swing.JFrame {
         try {
             obrada.delete();
             ucitajPodatke();
+            ocistiPolja();
         } catch (Iznimka e) {
             lblPoruka.setText(e.getPoruka());
         }
@@ -461,6 +464,16 @@ public class Servisi extends javax.swing.JFrame {
     private javax.swing.JTextField txtNaziv;
     private javax.swing.JTextArea txtOpis;
     // End of variables declaration//GEN-END:variables
+
+    private void ocistiPolja() {
+        txtNaziv.setText("");
+        txtOpis.setText("");
+        dpiTermin.clear();
+        txtCijena.setText("");
+        cmbVozilo.setSelectedIndex(-1);
+        cmbRadnik.setSelectedIndex(-1);
+        chbOdraden.setSelected(false);
+    }
 
     private void postaviVrijednostiUEntitet() {
         entitet.setNaziv(txtNaziv.getText());

@@ -31,9 +31,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane1" pref="241" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="txtUvjet" pref="158" max="32767" attributes="0"/>
+                              <Component id="txtUvjet" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnTrazi" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="btnTrazi" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -284,7 +284,7 @@
     <Component class="javax.swing.JButton" name="btnTrazi">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\K1R4\Desktop\Bernard ikone\icons8_search_25px.png"/>
+          <Image iconType="2" name="E:\jp22\ZavrsniRad\src\main\resources\icons\iconfinder_22-search_6498752 (1).png"/>
         </Property>
       </Properties>
       <Events>
