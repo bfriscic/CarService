@@ -15,8 +15,8 @@ Potrebno je ručno kreirati bazu
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
         <property name="connection.url">jdbc:mariadb://localhost:3306/servismotornihvozila_hib?useSSL=false</property>
-        <property name="connection.username">edunova</property>
-        <property name="connection.password">edunova</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">roots</property>
         <!-- JDBC connection pool settings ... using built-in test pool -->
         <property name="connection.pool_size">5</property>
         <!-- Select our SQL dialect -->

@@ -6,6 +6,8 @@
 package hr.friscic.zavrsnirad;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import hr.friscic.zavrsnirad.utility.HibernateUtil;
+import hr.friscic.zavrsnirad.utility.PocetniInsert;
 import hr.friscic.zavrsnirad.view.SplashScreen;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
