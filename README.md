@@ -1,8 +1,8 @@
-## Uvod
+## Intro
 
-SMV APP je Java desktop aplikacija koja služi za evidenciju klijenata, njihovih vozila, radnika i servisa koji se obavljaju na određenim vozilima. Korisničko sučelje aplikacije izrađeno je u Swing okruženju, dok se podaci pohranjunu u MariaDB bazu podataka zahvaljujući Hibernate ORMu.
+SMV APP is a Java desktop application that serves to record customers, their vehicles, workers and services performed on specific vehicles. The user interface of the application is created in the Swing environment, while the data is stored in the MariaDB database(local storage) thanks to Hibernate ORM.
 
-## Korišteni alati
+## Used tools
 
 * [Java JDK 14](https://www.oracle.com/java/technologies/javase/14-relnote-issues.html)
 * [MariaDB](https://mariadb.org/)
@@ -15,15 +15,15 @@ SMV APP je Java desktop aplikacija koja služi za evidenciju klijenata, njihovih
 * [LGoodDatePicker](https://github.com/LGoodDatePicker/LGoodDatePicker)
 * [VIN validator](https://gist.github.com/ubergesundheit/5626679)
 
-## Sažetak
+## Summary
 
-Aplikacija se sastoji od glavnog prozora unutar kojeg postoji glavni izbornik (jMenu) pomoću kojeg je moguće pristupiti raznim kategorijama ove aplikacije. Za ispravan rad aplikacije zaslužan je niz kontrola te je implementirana određena sigurnost u obliku uloga. Aplikaciju koriste operateri i administratori gdje administrator ima uvid u sve kategorije aplikacije, a operater ima mogućnost korištenja samo određenih funkcija poput unosa klijenata, vozila i servisa. Administrator ima mogućnost unosa, promjene i brisanja radnika, operatera te marki vozila koje servis ima mogućnost servisirati. Za ovaj proces zaslužna je autorizacija na samom početku pokretanja aplikacije gdje je potrebno unijeti odgovarajuću email adresu i lozinku za pristup aplikaciji. 
+The application consists of a main window within which there is a main menu (jMenu) through which it is possible to access various categories of this application. A number of controls are responsible for the correct operation of the application, and a certain security in the form of roles has been implemented. The application is used by operators and administrators where the administrator has insight into all categories of the application, and the operator has the ability to use only certain functions such as entering clients, vehicles and services. The administrator has the ability to enter, change and delete workers, operators and brands of vehicles that the service has the ability to service. This process is due to the authorization at the very beginning of the application launch, where it is necessary to enter the appropriate email address and password to access the application.
 
 <p align="center">
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Prijava%20admin.PNG" />
 </p>
 
-Nakon uspješne prijave u aplikaciju otvara se početni zaslon. Na početnom zaslonu nalazi se "Glavni izbornik" jMenu komponenta pomoću koje je moguće navigirati unutar aplikacije i otvarati pojedine prozore. Prikaz glavnog izbornika ovisi o ulozi odnosno koristili li aplikaciju administrator ili operater.
+After successfully logging in to the application, the home screen opens. On the home screen, there is a "Main Menu" jMenu component that allows you to navigate within the application and open individual windows. The display of the main menu depends on the role or whether the application was used by an administrator or an operator.
 
 <p align="left">
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Admin%20view.PNG" />
@@ -33,41 +33,41 @@ Nakon uspješne prijave u aplikaciju otvara se početni zaslon. Na početnom zas
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Operater%20view.PNG" />
 </p>
 
-* Kategorija "Klijenti" omogućava unos, promjenu, ispis i brisanje klijenata iz(u baze podataka (CRUD). Klijente se može pretraživati i sortirati na više načina pomoću implementirane tražilice.
+* The "Klijenti" category allows you to enter, change, print and delete clients from or in database(CRUDs). Clients can be searched and sorted in several ways using the implemented search engine.
 
 <p align="center">
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Klijenti%20view.PNG" />
 </p>
 
-* Kategorija "Vozila" omogućava unos, promjenu, ispis i brisanje vozila od pojedinog klijenta iz/u baze podataka (CRUD).
+* The "Vozila" category allows you to enter, change, print and delete vehicles from an individual client from / to a database (CRUD).
 
 <p align="center">
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Vozila%20view.PNG" />
 </p>
 
-* Kategorija "Servisi" omogućava unos, promjenu, ispis i brisanje servisa iz/u baze podataka (CRUD). U ovoj kategoriji nalazi se i dodatna opcija za export JSON datoteke.
+* The "Servisi" category allows you to enter, change, print and delete services from / to databases (CRUD). There is an additional option for exporting JSON files in this category.
 
 <p align="center">
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Servisi%20view.PNG" />
 </p>
 
-* Kategorija "Marke" omogućava unos, promjenu, ispis i brisanje marki vozila iz/u baze podataka (CRUD).
+* The "Marke" category allows you to enter, change, print and delete vehicle brands from / into the database (CRUD).
 
 <p align="center">
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Marke%20view.PNG" />
 </p>
 
-* Kategorija "Radnici" omogućava omogućava unos, promjenu, ispis i brisanje radnika iz baze podataka (CRUD).
+* The "Radnici" category allows you to enter, change, print and delete workers from the database (CRUD).
 
 <p align="center">
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Radnici%20view.PNG" />
 </p>
 
-* Kategorija "Operateri" omogućava omogućava unos, promjenu, ispis i brisanje operatera iz baze podataka (CRUD).
+* The "Operateri" category allows you to enter, change, print and delete operators from the database (CRUD).
 
 <p align="center">
 <img src="https://github.com/bfriscic/ZavrsniRad/blob/master/images/Operateri%20view.PNG" />
 </p>
 
-* Posljednja opcija u glavnom izborniku je "Izlaz" pomoću koje se zatvara aplikacija.
+* The last option in the main menu is "Izlaz" which closes the application.
 
