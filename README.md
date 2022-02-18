@@ -71,5 +71,3 @@ Nakon uspješne prijave u aplikaciju otvara se početni zaslon. Na početnom zas
 
 * Posljednja opcija u glavnom izborniku je "Izlaz" pomoću koje se zatvara aplikacija.
 
-Aplikacija pruža osnovne funkcije CRUD-a te postoji niz mogućnosti koje bi poboljšale rad aplikacije i omogućile bolju preglednost. Npr. unutar prozora "Servisi" moguće je postaviti dodatnu listu sa ispisom servisa koji su u tijeku i implementirati mogućnost ispisa računa. Ovo je samo jedan od primjera, no daljnji razvoj aplikacije planiram izvesti u obliku web aplikacije. :leaves:
-
